@@ -592,10 +592,10 @@ class InfoController extends CommonController
 
                         //冻结天数 ----------------------------->冻结天数处理-----------> by QQ742224183
                         if(C('jjdjdays')>0){
-                            //$ppdd = M('ppdd')->where(array('id'=>$proall['r_id']))->find();
+                            $ppdd = M('ppdd')->where(array('id'=>$proall['r_id']))->find();
                             $now_day = date('Y-m-d H:i:s');
-                            //$dakuan_day = date('Y-m-d',strtotime($ppdd['date_hk']));
-                            $dakuan_day = date('Y-m-d H:i:s',strtotime($proall['date']));
+                            $dakuan_day = date('Y-m-d',strtotime($ppdd['date_hk']));
+//                            $dakuan_day = date('Y-m-d H:i:s',strtotime($proall['date']));
 							    $second1 = strtotime($now_day);
 								$second2 = strtotime($dakuan_day);
 								if ($second1 < $second2) {

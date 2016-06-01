@@ -227,8 +227,8 @@ function canable_tixian($v){
         //判断是否已经够了冻结期
         $ppdd = M('ppdd')->where(array('id'=>$v['r_id']))->find();
         $now_time = date('Y-m-d H:i:s',time());
-        //$dk_time = date('Y-m-d',strtotime($ppdd['date_hk']));
-        $dk_time = date('Y-m-d H:i:s',strtotime($v['date']));
+        $dk_time = date('Y-m-d',strtotime($ppdd['date_hk']));
+//        $dk_time = date('Y-m-d H:i:s',strtotime($v['date']));
 		    $second1 = strtotime($now_time);
 			$second2 = strtotime($dk_time);
 			if ($second1 < $second2) {
