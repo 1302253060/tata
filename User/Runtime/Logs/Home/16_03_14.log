@@ -1,0 +1,673 @@
+[ 2016-03-14T10:24:52+08:00 ] 113.17.174.48 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000622s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000475s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000530s ]
+SQL: SHOW COLUMNS FROM `ot_system` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `ot_system` WHERE `SYS_ID` = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: uname /home/zlhqmfdo/public_html/User/Home/Controller/CommonController.class.php 第 54 行.
+NOTIC: [8] Undefined index: uname /home/zlhqmfdo/public_html/User/Home/Controller/CommonController.class.php 第 87 行.
+SQL: SHOW COLUMNS FROM `ot_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = null LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: uname /home/zlhqmfdo/public_html/User/Home/Common/function.php 第 842 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_user` WHERE `UE_accName` = null LIMIT 1   [ RunTime:0.0001s ]
+SQL: UPDATE `ot_user` SET `levelname`='普通会员' WHERE `UE_account` = null [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: uid /home/zlhqmfdo/public_html/User/Home/Controller/CommonController.class.php 第 92 行.
+SQL: SELECT * FROM `ot_user` WHERE `UE_ID` = null LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-03-14T10:24:52+08:00 ] 113.17.174.48 /Home/Index/home.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000237s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000241s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000279s ]
+SQL: SHOW COLUMNS FROM `ot_system` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ot_system` WHERE `SYS_ID` = 1 LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: uname /home/zlhqmfdo/public_html/User/Home/Controller/CommonController.class.php 第 54 行.
+
+[ 2016-03-14T10:24:52+08:00 ] 113.17.174.48 /Home/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000250s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000244s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000283s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000049s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000103s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.063377s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.063441s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000677s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000711s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.017382s ]
+INFO: [ app_end ] --END-- [ RunTime:0.017435s ]
+
+[ 2016-03-14T10:25:00+08:00 ] 61.160.224.141 /Home/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000270s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000253s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000305s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000044s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000091s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004557s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004596s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000097s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000127s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000272s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000305s ]
+
+[ 2016-03-14T10:25:00+08:00 ] 113.17.174.44 /Home/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000244s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000245s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000284s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000048s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000108s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004767s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004805s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000110s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000141s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000328s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000369s ]
+
+[ 2016-03-14T10:25:06+08:00 ] 61.160.224.141 /Home/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000236s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000236s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000274s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000038s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000077s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004457s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004495s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000091s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000121s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000307s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000352s ]
+
+[ 2016-03-14T10:25:10+08:00 ] 61.160.224.138 /Home/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000239s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000236s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000276s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000038s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000077s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004472s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004510s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000092s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000121s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000317s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000356s ]
+
+[ 2016-03-14T10:25:22+08:00 ] 61.160.224.138 /Home/Login/logincl.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000313s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000253s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000296s ]
+SQL: SHOW COLUMNS FROM `ot_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'admin22' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ot_ppdd` [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 2 for Think\Crypt::decrypt(), called in /home/zlhqmfdo/public_html/User/Home/Common/function.php on line 591 and defined /home/zlhqmfdo/public_html/ThinkPHP/Library/Think/Crypt.class.php 第 91 行.
+NOTIC: [8] Undefined variable: key /home/zlhqmfdo/public_html/ThinkPHP/Library/Think/Crypt.class.php 第 101 行.
+NOTIC: [2] Missing argument 2 for Think\Crypt::encrypt(), called in /home/zlhqmfdo/public_html/User/Home/Common/function.php on line 784 and defined /home/zlhqmfdo/public_html/ThinkPHP/Library/Think/Crypt.class.php 第 63 行.
+NOTIC: [8] Undefined variable: key /home/zlhqmfdo/public_html/ThinkPHP/Library/Think/Crypt.class.php 第 73 行.
+SQL: SELECT * FROM `ot_ppdd` WHERE `p_user` = 'admin22' AND `zt` = 0  [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant ue_id - assumed 'ue_id' /home/zlhqmfdo/public_html/User/Home/Controller/LoginController.class.php 第 116 行.
+NOTIC: [8] Use of undefined constant ue_account - assumed 'ue_account' /home/zlhqmfdo/public_html/User/Home/Controller/LoginController.class.php 第 118 行.
+NOTIC: [8] Use of undefined constant ue_account - assumed 'ue_account' /home/zlhqmfdo/public_html/User/Home/Controller/LoginController.class.php 第 126 行.
+SQL: SHOW COLUMNS FROM `ot_drrz` [ RunTime:0.0007s ]
+SQL: INSERT INTO `ot_drrz` (`date`,`ip`,`user`,`leixin`) VALUES ('2016-03-14 10:25:22','','admin22','0') [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant sf - assumed 'sf' /home/zlhqmfdo/public_html/User/Home/Controller/LoginController.class.php 第 139 行.
+
+[ 2016-03-14T10:25:22+08:00 ] 61.160.224.138 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000244s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000238s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000278s ]
+SQL: SHOW COLUMNS FROM `ot_system` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ot_system` WHERE `SYS_ID` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ot_user` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'admin22' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_user` WHERE `UE_accName` = 'admin22' LIMIT 1   [ RunTime:0.0001s ]
+SQL: UPDATE `ot_user` SET `levelname`='普通会员' WHERE `UE_account` = 'admin22' [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_ID` = 8 LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2016-03-14T10:25:22+08:00 ] 61.160.224.138 /Home/Index/home.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000236s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000243s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000288s ]
+SQL: SHOW COLUMNS FROM `ot_system` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ot_system` WHERE `SYS_ID` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ot_user` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'admin22' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_user` WHERE `UE_accName` = 'admin22' LIMIT 1   [ RunTime:0.0001s ]
+SQL: UPDATE `ot_user` SET `levelname`='普通会员' WHERE `UE_account` = 'admin22' [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_ID` = 8 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ot_tgbz` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_tgbz` WHERE `user` = 'admin22' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_tgbz` WHERE `user` = 'admin22' ORDER BY id DESC LIMIT 0,100   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ot_jsbz` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_jsbz` WHERE `user` = 'admin22' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_jsbz` WHERE `user` = 'admin22' ORDER BY id DESC LIMIT 0,100   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_jsbz` WHERE `user` = 'admin22' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ot_ppdd` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_ppdd` WHERE `p_user` = 'admin22' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_ppdd` WHERE `p_user` = 'admin22' ORDER BY id DESC LIMIT 0,100   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_ppdd` WHERE `g_user` = 'admin22' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_ppdd` WHERE `g_user` = 'admin22' ORDER BY id DESC LIMIT 0,100   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000146s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000186s ]
+NOTIC: [8] Undefined variable: pin_zs /home/zlhqmfdo/public_html/User/Runtime/Cache/Home/9b888f9a05177cc78c87c9cd7e37319c.php 第 436 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.056759s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.056800s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000099s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000132s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000282s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000324s ]
+
+[ 2016-03-14T10:26:36+08:00 ] 61.160.224.138 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000264s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000251s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000296s ]
+SQL: SHOW COLUMNS FROM `ot_system` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ot_system` WHERE `SYS_ID` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ot_user` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'admin22' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_user` WHERE `UE_accName` = 'admin22' LIMIT 1   [ RunTime:0.0001s ]
+SQL: UPDATE `ot_user` SET `levelname`='普通会员' WHERE `UE_account` = 'admin22' [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_ID` = 8 LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2016-03-14T10:26:36+08:00 ] 61.160.224.138 /Home/Index/home.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000257s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000240s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000281s ]
+SQL: SHOW COLUMNS FROM `ot_system` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `ot_system` WHERE `SYS_ID` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ot_user` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'admin22' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_user` WHERE `UE_accName` = 'admin22' LIMIT 1   [ RunTime:0.0001s ]
+SQL: UPDATE `ot_user` SET `levelname`='普通会员' WHERE `UE_account` = 'admin22' [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_ID` = 8 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ot_tgbz` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_tgbz` WHERE `user` = 'admin22' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_tgbz` WHERE `user` = 'admin22' ORDER BY id DESC LIMIT 0,100   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ot_jsbz` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_jsbz` WHERE `user` = 'admin22' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_jsbz` WHERE `user` = 'admin22' ORDER BY id DESC LIMIT 0,100   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_jsbz` WHERE `user` = 'admin22' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ot_ppdd` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_ppdd` WHERE `p_user` = 'admin22' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_ppdd` WHERE `p_user` = 'admin22' ORDER BY id DESC LIMIT 0,100   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_ppdd` WHERE `g_user` = 'admin22' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_ppdd` WHERE `g_user` = 'admin22' ORDER BY id DESC LIMIT 0,100   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000177s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000221s ]
+NOTIC: [8] Undefined variable: pin_zs /home/zlhqmfdo/public_html/User/Runtime/Cache/Home/9b888f9a05177cc78c87c9cd7e37319c.php 第 436 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027289s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027327s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000103s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000135s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000279s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000328s ]
+
+[ 2016-03-14T10:33:54+08:00 ] 113.17.174.48 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000385s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000380s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000455s ]
+SQL: SHOW COLUMNS FROM `ot_system` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `ot_system` WHERE `SYS_ID` = 1 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: uname /home/zlhqmfdo/public_html/User/Home/Controller/CommonController.class.php 第 54 行.
+NOTIC: [8] Undefined index: uname /home/zlhqmfdo/public_html/User/Home/Controller/CommonController.class.php 第 87 行.
+SQL: SHOW COLUMNS FROM `ot_user` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = null LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: uname /home/zlhqmfdo/public_html/User/Home/Common/function.php 第 842 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_user` WHERE `UE_accName` = null LIMIT 1   [ RunTime:0.0001s ]
+SQL: UPDATE `ot_user` SET `levelname`='普通会员' WHERE `UE_account` = null [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: uid /home/zlhqmfdo/public_html/User/Home/Controller/CommonController.class.php 第 92 行.
+SQL: SELECT * FROM `ot_user` WHERE `UE_ID` = null LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-03-14T10:33:54+08:00 ] 113.17.174.48 /Home/Index/home.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000252s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000245s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000285s ]
+SQL: SHOW COLUMNS FROM `ot_system` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `ot_system` WHERE `SYS_ID` = 1 LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: uname /home/zlhqmfdo/public_html/User/Home/Controller/CommonController.class.php 第 54 行.
+
+[ 2016-03-14T10:33:55+08:00 ] 113.17.174.48 /Home/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000249s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000240s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000278s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000044s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000090s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004462s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004499s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000091s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000120s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000263s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000294s ]
+
+[ 2016-03-14T10:34:25+08:00 ] 113.17.174.48 /Home/Login/logincl.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000367s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000239s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000275s ]
+SQL: SHOW COLUMNS FROM `ot_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'admin22' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ot_ppdd` [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 2 for Think\Crypt::decrypt(), called in /home/zlhqmfdo/public_html/User/Home/Common/function.php on line 591 and defined /home/zlhqmfdo/public_html/ThinkPHP/Library/Think/Crypt.class.php 第 91 行.
+NOTIC: [8] Undefined variable: key /home/zlhqmfdo/public_html/ThinkPHP/Library/Think/Crypt.class.php 第 101 行.
+NOTIC: [2] Missing argument 2 for Think\Crypt::encrypt(), called in /home/zlhqmfdo/public_html/User/Home/Common/function.php on line 784 and defined /home/zlhqmfdo/public_html/ThinkPHP/Library/Think/Crypt.class.php 第 63 行.
+NOTIC: [8] Undefined variable: key /home/zlhqmfdo/public_html/ThinkPHP/Library/Think/Crypt.class.php 第 73 行.
+SQL: SELECT * FROM `ot_ppdd` WHERE `p_user` = 'admin22' AND `zt` = 0  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant ue_id - assumed 'ue_id' /home/zlhqmfdo/public_html/User/Home/Controller/LoginController.class.php 第 116 行.
+NOTIC: [8] Use of undefined constant ue_account - assumed 'ue_account' /home/zlhqmfdo/public_html/User/Home/Controller/LoginController.class.php 第 118 行.
+NOTIC: [8] Use of undefined constant ue_account - assumed 'ue_account' /home/zlhqmfdo/public_html/User/Home/Controller/LoginController.class.php 第 126 行.
+SQL: SHOW COLUMNS FROM `ot_drrz` [ RunTime:0.0005s ]
+SQL: INSERT INTO `ot_drrz` (`date`,`ip`,`user`,`leixin`) VALUES ('2016-03-14 10:34:25','','admin22','0') [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant sf - assumed 'sf' /home/zlhqmfdo/public_html/User/Home/Controller/LoginController.class.php 第 139 行.
+
+[ 2016-03-14T10:34:25+08:00 ] 113.17.174.48 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000270s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000255s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000305s ]
+SQL: SHOW COLUMNS FROM `ot_system` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ot_system` WHERE `SYS_ID` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ot_user` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'admin22' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_user` WHERE `UE_accName` = 'admin22' LIMIT 1   [ RunTime:0.0001s ]
+SQL: UPDATE `ot_user` SET `levelname`='普通会员' WHERE `UE_account` = 'admin22' [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_ID` = 8 LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2016-03-14T10:34:26+08:00 ] 113.17.174.48 /Home/Index/home.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000240s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000234s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000272s ]
+SQL: SHOW COLUMNS FROM `ot_system` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ot_system` WHERE `SYS_ID` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ot_user` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'admin22' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_user` WHERE `UE_accName` = 'admin22' LIMIT 1   [ RunTime:0.0001s ]
+SQL: UPDATE `ot_user` SET `levelname`='普通会员' WHERE `UE_account` = 'admin22' [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_ID` = 8 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ot_tgbz` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_tgbz` WHERE `user` = 'admin22' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_tgbz` WHERE `user` = 'admin22' ORDER BY id DESC LIMIT 0,100   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ot_jsbz` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_jsbz` WHERE `user` = 'admin22' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_jsbz` WHERE `user` = 'admin22' ORDER BY id DESC LIMIT 0,100   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_jsbz` WHERE `user` = 'admin22' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ot_ppdd` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_ppdd` WHERE `p_user` = 'admin22' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_ppdd` WHERE `p_user` = 'admin22' ORDER BY id DESC LIMIT 0,100   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_ppdd` WHERE `g_user` = 'admin22' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_ppdd` WHERE `g_user` = 'admin22' ORDER BY id DESC LIMIT 0,100   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000189s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000246s ]
+NOTIC: [8] Undefined variable: pin_zs /home/zlhqmfdo/public_html/User/Runtime/Cache/Home/9b888f9a05177cc78c87c9cd7e37319c.php 第 436 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027215s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027259s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000109s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000149s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000239s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000272s ]
+
+[ 2016-03-14T10:34:54+08:00 ] 113.17.174.48 /Home/Reg/logout.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000377s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000248s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000289s ]
+
+[ 2016-03-14T10:34:54+08:00 ] 113.17.174.48 /Home/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000242s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000235s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000277s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000048s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000092s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004500s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004538s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000097s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000126s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000268s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000300s ]
+
+[ 2016-03-14T10:35:28+08:00 ] 61.160.224.138 /Home/Login/loginadmin/account/a1@qq.com/password/e10adc3949ba59abbe56e057f20f883e/secpw/e10adc3949ba59abbe56e057f20f883e
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000247s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000241s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000281s ]
+SQL: SHOW COLUMNS FROM `ot_user` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant ue_id - assumed 'ue_id' /home/zlhqmfdo/public_html/User/Home/Controller/LoginController.class.php 第 210 行.
+NOTIC: [8] Use of undefined constant ue_id - assumed 'ue_id' /home/zlhqmfdo/public_html/User/Home/Controller/LoginController.class.php 第 212 行.
+NOTIC: [8] Use of undefined constant ue_account - assumed 'ue_account' /home/zlhqmfdo/public_html/User/Home/Controller/LoginController.class.php 第 214 行.
+
+[ 2016-03-14T10:35:28+08:00 ] 61.160.224.138 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000237s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000238s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000314s ]
+SQL: SHOW COLUMNS FROM `ot_system` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ot_system` WHERE `SYS_ID` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ot_user` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_user` WHERE `UE_accName` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: UPDATE `ot_user` SET `levelname`='普通会员' WHERE `UE_account` = 'a1@qq.com' [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_ID` = 2 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-03-14T10:35:28+08:00 ] 61.160.224.138 /Home/Index/home.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000239s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000243s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000281s ]
+SQL: SHOW COLUMNS FROM `ot_system` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ot_system` WHERE `SYS_ID` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ot_user` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_user` WHERE `UE_accName` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: UPDATE `ot_user` SET `levelname`='普通会员' WHERE `UE_account` = 'a1@qq.com' [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_ID` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ot_tgbz` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_tgbz` WHERE `user` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_tgbz` WHERE `user` = 'a1@qq.com' ORDER BY id DESC LIMIT 0,100   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ot_jsbz` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_jsbz` WHERE `user` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_jsbz` WHERE `user` = 'a1@qq.com' ORDER BY id DESC LIMIT 0,100   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_jsbz` WHERE `user` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ot_ppdd` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_ppdd` WHERE `p_user` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_ppdd` WHERE `p_user` = 'a1@qq.com' ORDER BY id DESC LIMIT 0,100   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_ppdd` WHERE `g_user` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_ppdd` WHERE `g_user` = 'a1@qq.com' ORDER BY id DESC LIMIT 0,100   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000174s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000214s ]
+NOTIC: [8] Undefined variable: pin_zs /home/zlhqmfdo/public_html/User/Runtime/Cache/Home/9b888f9a05177cc78c87c9cd7e37319c.php 第 436 行.
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a2@qq.com' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a2@qq.com' LIMIT 1   [ RunTime:0.0002s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027749s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027787s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000101s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000132s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000284s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000326s ]
+
+[ 2016-03-14T10:35:54+08:00 ] 61.160.224.138 /Home/Index/english.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000238s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000241s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000281s ]
+SQL: SHOW COLUMNS FROM `ot_system` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ot_system` WHERE `SYS_ID` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ot_user` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_user` WHERE `UE_accName` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: UPDATE `ot_user` SET `levelname`='普通会员' WHERE `UE_account` = 'a1@qq.com' [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_ID` = 2 LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000027s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000065s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003646s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003685s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000094s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000125s ]
+
+[ 2016-03-14T10:36:00+08:00 ] 61.160.224.138 /Home/Index/korea.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000241s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000238s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000276s ]
+SQL: SHOW COLUMNS FROM `ot_system` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ot_system` WHERE `SYS_ID` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ot_user` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_user` WHERE `UE_accName` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: UPDATE `ot_user` SET `levelname`='普通会员' WHERE `UE_account` = 'a1@qq.com' [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_ID` = 2 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000027s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000064s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003370s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003409s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000095s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000124s ]
+
+[ 2016-03-14T10:36:05+08:00 ] 61.160.224.138 /Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000267s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000260s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000310s ]
+SQL: SHOW COLUMNS FROM `ot_system` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ot_system` WHERE `SYS_ID` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ot_user` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_user` WHERE `UE_accName` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: UPDATE `ot_user` SET `levelname`='普通会员' WHERE `UE_account` = 'a1@qq.com' [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_ID` = 2 LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2016-03-14T10:36:05+08:00 ] 61.160.224.138 /Home/Index/home.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000246s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000238s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000277s ]
+SQL: SHOW COLUMNS FROM `ot_system` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ot_system` WHERE `SYS_ID` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ot_user` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_user` WHERE `UE_accName` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: UPDATE `ot_user` SET `levelname`='普通会员' WHERE `UE_account` = 'a1@qq.com' [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_ID` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ot_tgbz` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_tgbz` WHERE `user` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_tgbz` WHERE `user` = 'a1@qq.com' ORDER BY id DESC LIMIT 0,100   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ot_jsbz` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_jsbz` WHERE `user` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_jsbz` WHERE `user` = 'a1@qq.com' ORDER BY id DESC LIMIT 0,100   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_jsbz` WHERE `user` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ot_ppdd` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_ppdd` WHERE `p_user` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_ppdd` WHERE `p_user` = 'a1@qq.com' ORDER BY id DESC LIMIT 0,100   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_ppdd` WHERE `g_user` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_ppdd` WHERE `g_user` = 'a1@qq.com' ORDER BY id DESC LIMIT 0,100   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000185s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000241s ]
+NOTIC: [8] Undefined variable: pin_zs /home/zlhqmfdo/public_html/User/Runtime/Cache/Home/9b888f9a05177cc78c87c9cd7e37319c.php 第 436 行.
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a2@qq.com' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a2@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028812s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028860s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000140s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000173s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000248s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000283s ]
+
+[ 2016-03-14T10:36:08+08:00 ] 61.160.224.138 /Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000243s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000249s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000287s ]
+SQL: SHOW COLUMNS FROM `ot_system` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ot_system` WHERE `SYS_ID` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ot_user` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_user` WHERE `UE_accName` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: UPDATE `ot_user` SET `levelname`='普通会员' WHERE `UE_account` = 'a1@qq.com' [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_ID` = 2 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-03-14T10:36:08+08:00 ] 61.160.224.138 /Home/Index/home.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000245s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000237s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000275s ]
+SQL: SHOW COLUMNS FROM `ot_system` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ot_system` WHERE `SYS_ID` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ot_user` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_user` WHERE `UE_accName` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: UPDATE `ot_user` SET `levelname`='普通会员' WHERE `UE_account` = 'a1@qq.com' [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_ID` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ot_tgbz` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_tgbz` WHERE `user` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_tgbz` WHERE `user` = 'a1@qq.com' ORDER BY id DESC LIMIT 0,100   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ot_jsbz` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_jsbz` WHERE `user` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_jsbz` WHERE `user` = 'a1@qq.com' ORDER BY id DESC LIMIT 0,100   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_jsbz` WHERE `user` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ot_ppdd` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_ppdd` WHERE `p_user` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_ppdd` WHERE `p_user` = 'a1@qq.com' ORDER BY id DESC LIMIT 0,100   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_ppdd` WHERE `g_user` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_ppdd` WHERE `g_user` = 'a1@qq.com' ORDER BY id DESC LIMIT 0,100   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000188s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000241s ]
+NOTIC: [8] Undefined variable: pin_zs /home/zlhqmfdo/public_html/User/Runtime/Cache/Home/9b888f9a05177cc78c87c9cd7e37319c.php 第 436 行.
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a2@qq.com' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a2@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027712s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027751s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000103s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000138s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000238s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000273s ]
+
+[ 2016-03-14T10:36:11+08:00 ] 61.160.224.138 /Home/Index/english.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000237s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000239s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000277s ]
+SQL: SHOW COLUMNS FROM `ot_system` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `ot_system` WHERE `SYS_ID` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ot_user` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `ot_user` WHERE `UE_accName` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: UPDATE `ot_user` SET `levelname`='普通会员' WHERE `UE_account` = 'a1@qq.com' [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_ID` = 2 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000028s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000065s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003421s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003465s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000104s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000135s ]
+

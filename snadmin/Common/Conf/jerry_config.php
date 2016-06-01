@@ -1,0 +1,1 @@
+<?php	return array ( 'lixi1' => '2', 'lixi2' => '2', 'tiqian_time' => '6', 'tiqian_lx' => '2', 'submit' => '提交', 'URL_STRING_MODEL' => 'sXhy24WnpbCFqnGnr3mYZMmBeWZ8snKmv5WXrJWgp5qwonPUkZalrprThmCxnJertH2RppSRg6ux0ainl3N0og', );?>

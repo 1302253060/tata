@@ -1,0 +1,291 @@
+[ 2016-03-12T12:51:13+08:00 ] 61.160.224.138 /admin.php
+ERR: 非法操作:index
+
+[ 2016-03-12T12:51:16+08:00 ] 61.160.224.138 /admin.php
+ERR: 非法操作:index
+
+[ 2016-03-12T13:54:23+08:00 ] 113.17.174.41 /admin.php
+ERR: 非法操作:index
+
+[ 2016-03-12T13:54:27+08:00 ] 113.17.174.41 /admin.php
+ERR: 非法操作:index
+
+[ 2016-03-12T13:55:40+08:00 ] 113.17.174.45 /admin.php
+ERR: 非法操作:index
+
+[ 2016-03-12T13:57:13+08:00 ] 113.17.174.45 /admin.php
+ERR: 非法操作:index
+
+[ 2016-03-12T13:58:12+08:00 ] 113.17.174.44 /admin.php
+ERR: 非法操作:index
+
+[ 2016-03-12T13:58:16+08:00 ] 113.17.174.44 /admin.php
+ERR: 非法操作:index
+
+[ 2016-03-12T14:02:02+08:00 ] 113.17.174.41 /admin.php
+ERR: 非法操作:index
+
+[ 2016-03-12T14:17:25+08:00 ] 61.160.224.137 /admin.php
+ERR: 非法操作:index
+
+[ 2016-03-12T14:17:37+08:00 ] 61.160.224.137 /admin.php
+ERR: 非法操作:index
+
+[ 2016-03-12T14:17:50+08:00 ] 61.160.224.137 /admin.php
+ERR: 非法操作:index
+
+[ 2016-03-12T14:19:23+08:00 ] 61.160.224.137 /admin.php
+ERR: 非法操作:index
+
+[ 2016-03-12T14:29:32+08:00 ] 61.160.224.137 /admin.php
+ERR: 非法操作:index
+
+[ 2016-03-12T14:52:17+08:00 ] 113.17.174.41 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000253s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000446s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000260s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000302s ]
+
+[ 2016-03-12T14:55:22+08:00 ] 113.17.174.44 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000250s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000446s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000284s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000335s ]
+
+[ 2016-03-12T14:56:45+08:00 ] 113.17.174.49 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000249s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000438s ]
+SQL: SHOW COLUMNS FROM `ot_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'admin@qq.com' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'admin@qq.com'  [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: user_jb /home/zlhqmfdo/public_html/snadmin/Home/Controller/CommonController.class.php 第 223 行.
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'a1@qq.com'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a2@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'a2@qq.com'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'admin22@163.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'admin22@163.com'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a3@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'a3@qq.com'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a4@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'a4@qq.com'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'admin11' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'admin11'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'admin22' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'admin22'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'admin332' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'admin332'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'adminss' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'adminss'  [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000305s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000340s ]
+
+[ 2016-03-12T14:56:57+08:00 ] 113.17.174.49 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000255s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000445s ]
+SQL: SHOW COLUMNS FROM `ot_user` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'admin@qq.com' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'admin@qq.com'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'a1@qq.com'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a2@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'a2@qq.com'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'admin22@163.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'admin22@163.com'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a3@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'a3@qq.com'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a4@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'a4@qq.com'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'admin11' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'admin11'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'admin22' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'admin22'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'admin332' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'admin332'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'adminss' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'adminss'  [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000347s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000385s ]
+
+[ 2016-03-12T14:57:34+08:00 ] 113.17.174.48 /admin.php/Home/Shop/
+ERR: 非法操作:index
+
+[ 2016-03-12T14:58:12+08:00 ] 113.17.174.48 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000248s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000442s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000282s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000328s ]
+
+[ 2016-03-12T14:59:52+08:00 ] 113.17.174.45 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000251s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000442s ]
+SQL: SHOW COLUMNS FROM `ot_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'admin@qq.com' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'admin@qq.com'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'a1@qq.com'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a2@qq.com' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'a2@qq.com'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'admin22@163.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'admin22@163.com'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a3@qq.com' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'a3@qq.com'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a4@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'a4@qq.com'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'admin11' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'admin11'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'admin22' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'admin22'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'admin332' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'admin332'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'adminss' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'adminss'  [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000310s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000350s ]
+
+[ 2016-03-12T14:59:59+08:00 ] 113.17.174.44 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000252s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000446s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000294s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000351s ]
+
+[ 2016-03-12T15:12:55+08:00 ] 113.17.174.46 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000243s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000430s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000247s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000288s ]
+
+[ 2016-03-12T15:13:17+08:00 ] 113.17.174.46 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000246s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000274s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000321s ]
+
+[ 2016-03-12T15:13:44+08:00 ] 113.17.174.46 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000253s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000445s ]
+SQL: SHOW COLUMNS FROM `ot_user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'admin@qq.com' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'admin@qq.com'  [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: user_jb /home/zlhqmfdo/public_html/snadmin/Home/Controller/CommonController.class.php 第 223 行.
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'a1@qq.com'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a2@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'a2@qq.com'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'admin22@163.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'admin22@163.com'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a3@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'a3@qq.com'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a4@qq.com' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'a4@qq.com'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'admin11' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'admin11'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'admin22' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'admin22'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'admin332' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'admin332'  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'adminss' LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'adminss'  [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000322s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000362s ]
+
+[ 2016-03-12T15:14:09+08:00 ] 113.17.174.46 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000247s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000442s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000257s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000298s ]
+
+[ 2016-03-12T15:14:20+08:00 ] 113.17.174.46 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000255s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000450s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000253s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000297s ]
+
+[ 2016-03-12T17:38:38+08:00 ] 113.17.174.44 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000245s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000434s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000251s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000302s ]
+
+[ 2016-03-12T17:38:40+08:00 ] 113.17.174.44 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000243s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000435s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000278s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000326s ]
+
+[ 2016-03-12T17:39:02+08:00 ] 113.17.174.44 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000248s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000438s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000257s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000299s ]
+
+[ 2016-03-12T17:46:51+08:00 ] 113.17.174.46 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000246s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000434s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000251s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000293s ]
+
+[ 2016-03-12T17:47:03+08:00 ] 113.17.174.49 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000248s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000438s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000283s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000332s ]
+
+[ 2016-03-12T17:47:24+08:00 ] 113.17.174.49 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000254s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000448s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000246s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000297s ]
+
+[ 2016-03-12T17:47:26+08:00 ] 113.17.174.49 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000256s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000458s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000341s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000390s ]
+
+[ 2016-03-12T17:48:10+08:00 ] 113.17.174.48 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000252s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000445s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000253s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000294s ]
+

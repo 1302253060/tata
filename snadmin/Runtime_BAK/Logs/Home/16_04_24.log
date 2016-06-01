@@ -1,0 +1,445 @@
+[ 2016-04-24T11:36:49+08:00 ] 182.114.111.85 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.015625s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015625s ]
+
+[ 2016-04-24T11:37:07+08:00 ] 182.114.111.85 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.015625s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015625s ]
+
+[ 2016-04-24T13:00:05+08:00 ] 1.50.234.239 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+SQL: SHOW COLUMNS FROM `ot_user` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'admin@qq.com' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'admin@qq.com'  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: user_jb D:\phpStudy\WWW\snadmin\Home\Controller\CommonController.class.php 第 223 行.
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'a1@qq.com'  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a2@qq.com' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'a2@qq.com'  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a3@qq.com' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'a3@qq.com'  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a4@qq.com' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'a4@qq.com'  [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-24T13:01:00+08:00 ] 1.50.234.239 /admin.php/Home/Shop/
+ERR: 非法操作:index
+
+[ 2016-04-24T13:01:24+08:00 ] 1.50.234.239 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-24T13:01:47+08:00 ] 1.50.234.239 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-24T13:01:51+08:00 ] 1.50.234.239 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-24T13:02:05+08:00 ] 1.50.234.239 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-24T13:02:36+08:00 ] 1.50.234.239 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-24T13:02:44+08:00 ] 1.50.234.239 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-24T13:03:37+08:00 ] 1.50.234.239 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-24T13:43:11+08:00 ] 112.94.199.60 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-24T15:27:35+08:00 ] 182.114.25.163 /admin.php/Home/Index/js/pie.htc
+ERR: 非法操作:js
+
+[ 2016-04-24T15:27:40+08:00 ] 182.114.25.163 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-24T15:29:07+08:00 ] 182.114.25.163 /admin.php/Home/Index/js/pie.htc
+ERR: 非法操作:js
+
+[ 2016-04-24T15:30:37+08:00 ] 182.114.25.163 /admin.php/Home/Index/js/pie.htc
+ERR: 非法操作:js
+
+[ 2016-04-24T15:30:38+08:00 ] 182.114.25.163 /admin.php/Home/Index/js/pie.htc
+ERR: 非法操作:js
+
+[ 2016-04-24T15:30:39+08:00 ] 182.114.25.163 /admin.php/Home/Index/js/pie.htc
+ERR: 非法操作:js
+
+[ 2016-04-24T15:30:42+08:00 ] 182.114.25.163 /admin.php/Home/Index/js/pie.htc
+ERR: 非法操作:js
+
+[ 2016-04-24T15:33:32+08:00 ] 182.114.25.163 /admin.php/Home/Index/js/pie.htc
+ERR: 非法操作:js
+
+[ 2016-04-24T15:33:37+08:00 ] 182.114.25.163 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ot_user` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'admin@qq.com' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'admin@qq.com'  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'a1@qq.com'  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a2@qq.com' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'a2@qq.com'  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a3@qq.com' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'a3@qq.com'  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a4@qq.com' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'a4@qq.com'  [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-24T15:33:38+08:00 ] 182.114.25.163 /admin.php/Home/Index/js/pie.htc
+ERR: 非法操作:js
+
+[ 2016-04-24T15:33:41+08:00 ] 182.114.25.163 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ot_user` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'admin@qq.com' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'admin@qq.com'  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'a1@qq.com'  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a2@qq.com' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'a2@qq.com'  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a3@qq.com' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'a3@qq.com'  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a4@qq.com' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'a4@qq.com'  [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015625s ]
+
+[ 2016-04-24T15:33:43+08:00 ] 182.114.25.163 /admin.php/Home/Index/js/pie.htc
+ERR: 非法操作:js
+
+[ 2016-04-24T15:34:01+08:00 ] 182.114.25.163 /admin.php/Home/Index/js/pie.htc
+ERR: 非法操作:js
+
+[ 2016-04-24T15:58:42+08:00 ] 1.50.234.239 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.015625s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015625s ]
+
+[ 2016-04-24T16:21:19+08:00 ] 182.114.25.163 /admin.php/Home/Index/js/pie.htc
+ERR: 非法操作:js
+
+[ 2016-04-24T16:22:17+08:00 ] 182.114.25.163 /admin.php/Home/Index/js/pie.htc
+ERR: 非法操作:js
+
+[ 2016-04-24T16:22:28+08:00 ] 182.114.25.163 /admin.php/Home/Index/js/pie.htc
+ERR: 非法操作:js
+
+[ 2016-04-24T16:24:50+08:00 ] 14.30.0.74 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-24T16:25:52+08:00 ] 14.30.0.74 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-24T16:25:57+08:00 ] 14.30.0.74 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-24T16:26:31+08:00 ] 182.114.25.163 /admin.php/Home/Index/js/pie.htc
+ERR: 非法操作:js
+
+[ 2016-04-24T16:26:43+08:00 ] 182.114.25.163 /admin.php/Home/Index/js/pie.htc
+ERR: 非法操作:js
+
+[ 2016-04-24T16:26:52+08:00 ] 182.114.25.163 /admin.php/Home/Index/js/pie.htc
+ERR: 非法操作:js
+
+[ 2016-04-24T16:27:15+08:00 ] 182.114.25.163 /admin.php/Home/Index/js/pie.htc
+ERR: 非法操作:js
+
+[ 2016-04-24T16:27:36+08:00 ] 182.114.25.163 /admin.php/Home/Index/js/pie.htc
+ERR: 非法操作:js
+
+[ 2016-04-24T16:31:42+08:00 ] 182.114.25.163 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.015625s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015625s ]
+
+[ 2016-04-24T16:32:04+08:00 ] 182.114.25.163 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-24T16:32:20+08:00 ] 182.114.25.163 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-24T16:32:48+08:00 ] 210.79.103.224 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ot_user` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'admin@qq.com' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'admin@qq.com'  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'a1@qq.com'  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a2@qq.com' LIMIT 1   [ RunTime:0.0313s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'a2@qq.com'  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a3@qq.com' LIMIT 1   [ RunTime:0.0156s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'a3@qq.com'  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a4@qq.com' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'a4@qq.com'  [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-24T16:34:11+08:00 ] 182.114.25.163 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-24T16:34:14+08:00 ] 182.114.25.163 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-24T16:36:10+08:00 ] 182.114.25.163 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-24T16:39:30+08:00 ] 182.114.25.163 /admin.php/Home/Index/js/pie.htc
+ERR: 非法操作:js
+
+[ 2016-04-24T16:41:45+08:00 ] 182.114.25.163 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-24T16:44:40+08:00 ] 182.114.25.163 /admin.php/Home/Index/js/pie.htc
+ERR: 非法操作:js
+
+[ 2016-04-24T16:44:41+08:00 ] 182.114.25.163 /admin.php/Home/Index/js/pie.htc
+ERR: 非法操作:js
+
+[ 2016-04-24T17:07:54+08:00 ] 182.114.25.163 /admin.php/Home/Index/js/pie.htc
+ERR: 非法操作:js
+
+[ 2016-04-24T21:35:58+08:00 ] 115.61.169.143 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015625s ]
+
+[ 2016-04-24T21:52:52+08:00 ] 115.61.169.143 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.015625s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015625s ]
+
+[ 2016-04-24T21:52:58+08:00 ] 115.61.169.143 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-24T21:59:28+08:00 ] 112.94.199.216 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-24T22:03:24+08:00 ] 115.61.169.143 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.015625s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015625s ]
+
+[ 2016-04-24T22:04:12+08:00 ] 115.61.169.143 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.015626s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015626s ]
+
+[ 2016-04-24T22:05:10+08:00 ] 115.61.169.143 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-24T22:08:33+08:00 ] 115.61.169.143 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-24T22:09:47+08:00 ] 115.61.169.143 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-24T22:10:32+08:00 ] 115.61.169.143 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-24T22:14:58+08:00 ] 115.61.169.143 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-24T22:18:18+08:00 ] 115.61.169.143 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `ot_user` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'admin@qq.com' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'admin@qq.com'  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a1@qq.com' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'a1@qq.com'  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a2@qq.com' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'a2@qq.com'  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a3@qq.com' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'a3@qq.com'  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ot_user` WHERE `UE_account` = 'a4@qq.com' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `UE_account` FROM `ot_user` WHERE `UE_accName` = 'a4@qq.com'  [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-24T22:23:06+08:00 ] 112.94.199.115 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-24T23:55:38+08:00 ] 112.94.199.115 /admin.php/Home/Common/getTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+

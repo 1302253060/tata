@@ -1,0 +1,36 @@
+[ 2016-05-07T18:01:56+08:00 ] 127.0.0.1 /sncss/date/skins/default/icon.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Sncss
+
+[ 2016-05-07T18:10:21+08:00 ] 127.0.0.1 /bitStyle/js/fn/fn_nl2br.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:BitStyle
+
+[ 2016-05-07T18:19:46+08:00 ] 127.0.0.1 /assets/vendor/fontawesome/css/font-awesome.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Assets
+
+[ 2016-05-07T18:21:17+08:00 ] 127.0.0.1 /sncss/date/skins/default/icon.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Sncss
+
+[ 2016-05-07T18:26:10+08:00 ] 127.0.0.1 /sncss/date/skins/default/icon.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Sncss
+
+[ 2016-05-07T18:26:54+08:00 ] 127.0.0.1 /assets/vendor/fontawesome/css/font-awesome.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Assets
+
