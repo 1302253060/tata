@@ -1951,4 +1951,111 @@ class IndexController extends CommonController
         $this->success("清空完成", U('Home/Index/main'));
     }
 
+
+    public function cyjzs()
+    {
+
+
+        $User = M('userget'); // 實例化User對象
+
+
+        $map['UG_dataType'] = 'xtcyzs';
+
+        $count = $User->where($map)->count(); // 查詢滿足要求的總記錄數
+        //$page = new \Think\Page ( $count, 3 ); // 實例化分頁類 傳入總記錄數和每頁顯示的記錄數(25)
+
+        $p = getpage($count, 20);
+
+        $list = $User->where($map)->order('UG_ID DESC')->limit($p->firstRow, $p->listRows)->select();
+        $this->assign('list', $list); // 賦值數據集
+        $this->assign('page', $p->show()); // 賦值分頁輸出
+
+
+        $this->display('index/cyjzs');
+    }
+
+
+    public function cyjzscl()
+    {
+
+
+        $User = M('user'); // 實例化User對象
+        //dump(I('post.UE_ID'));die;
+        if (I('post.lx') == 'jb') {
+            if (I('post.sl') <> '' && $User->where(array('UE_account' => I('post.user')))->find() <> 0 && preg_match('/^[0-9-]{1,20}$/', I('post.sl'))) {
+                $user_zq = M('user')->where(array('UE_account' => I('post.user')))->find();
+                if ($User->where(array('UE_account' => I('post.user')))->setInc('UE_cyj', I('post.sl'))) {
+
+
+                    $userxx = M('user')->where(array('UE_account' => I('post.user')))->find();
+                    $note3 = "系统操作";
+                    $record3 ["UG_account"] = I('post.user'); // 登入轉出賬戶
+                    $record3 ["UG_type"] = 'jb';
+                    $record3 ["UG_money"] = I('post.sl'); // 金幣
+                    $record3 ["UG_allGet"] = $user_zq['ue_cyj']; //
+                    $record3 ["UG_balance"] = $userxx['ue_cyj']; // 當前推薦人的金幣餘額
+                    $record3 ["UG_dataType"] = 'xtcyzs'; // 金幣轉出
+                    $record3 ["UG_note"] = $note3; // 推薦獎說明
+                    $record3["UG_getTime"] = date('Y-m-d H:i:s', time()); //操作時間
+                    $reg4 = M('userget')->add($record3);
+
+
+                    $this->success('排单币赠送成功!');
+                } else {
+                    $this->success('排单币赠送失败!');
+                }
+            } else {
+                $this->success('用户 名不存在或填写有误!');
+            }
+
+
+        } elseif (I('post.lx') == 'yb') {
+            if (I('post.sl') <> '' && $User->where(array('UE_account' => I('post.user')))->find() <> 0 && preg_match('/^[0-9-]{1,20}$/', I('post.sl'))) {
+                if ($User->where(array('UE_account' => I('post.user')))->setInc('ybhe', I('post.sl'))) {
+                    $userxx = M('user')->where(array('UE_account' => I('post.user')))->find();
+                    $note3 = "系统赠送";
+                    $record3 ["UG_account"] = I('post.user'); // 登入轉出賬戶
+                    $record3 ["UG_type"] = 'yb';
+                    $record3 ["yb"] = I('post.sl'); // 金幣
+                    $record3 ["yb1"] = I('post.sl'); //
+                    $record3 ["ybhe"] = $userxx['ybhe']; // 當前推薦人的金幣餘額
+                    $record3 ["UG_dataType"] = 'xtzs'; // 金幣轉出
+                    $record3 ["UG_note"] = $note3; // 推薦獎說明
+                    $record3["UG_getTime"] = date('Y-m-d H:i:s', time()); //操作時間
+                    $reg4 = M('userget')->add($record3);
+
+
+                    $this->success('银币赠送成功!');
+                } else {
+                    $this->success('银币赠送失败!');
+                }
+            } else {
+                $this->success('用户 名不存在或填写有误!');
+            }
+        } elseif (I('post.lx') == 'zsb') {
+            if (I('post.sl') <> '' && $User->where(array('UE_account' => I('post.user')))->find() <> 0 && preg_match('/^[0-9-]{1,20}$/', I('post.sl'))) {
+                if ($User->where(array('UE_account' => I('post.user')))->setInc('zsbhe', I('post.sl'))) {
+                    $userxx = M('user')->where(array('UE_account' => I('post.user')))->find();
+                    $note3 = "系统赠送";
+                    $record3 ["UG_account"] = I('post.user'); // 登入轉出賬戶
+                    $record3 ["UG_type"] = 'zsb';
+                    $record3 ["zsb"] = I('post.sl'); // 金幣
+                    $record3 ["zsb1"] = I('post.sl'); //
+                    $record3 ["zsbhe"] = $userxx['zsbhe']; // 當前推薦人的金幣餘額
+                    $record3 ["UG_dataType"] = 'xtzs'; // 金幣轉出
+                    $record3 ["UG_note"] = $note3; // 推薦獎說明
+                    $record3["UG_getTime"] = date('Y-m-d H:i:s', time()); //操作時間
+                    $reg4 = M('userget')->add($record3);
+
+
+                    $this->success('钻石币赠送成功!');
+                } else {
+                    $this->success('钻石币赠送失败!');
+                }
+            } else {
+                $this->success('用户 名不存在或填写有误!');
+            }
+        }
+
+    }
 }

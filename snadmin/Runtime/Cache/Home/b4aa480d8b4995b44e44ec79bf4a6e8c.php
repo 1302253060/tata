@@ -44,7 +44,8 @@ $(function(){
         <li><cite></cite><a href="/admin.php/Home/Index/jbzs" target="rightFrame">金币赠送</a><i></i></li>
         <li><cite></cite><a href="/admin.php/Home/Index/team" target="rightFrame">会员关系网</a><i></i></li>
 		<li><cite></cite><a href="/admin.php/Home/Index/txlist" target="rightFrame">提现管理</a><i></i></li>
-        </ul>    
+		<li><cite></cite><a href="/admin.php/Home/Index/cyjzs" target="rightFrame">排单币赠送</a><i></i></li>
+        </ul>
     </dd>
         
     

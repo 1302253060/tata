@@ -2758,6 +2758,72 @@ public function jbzzcl() {
 
 		$this->display('Index/gdList');
 	}
-	 
-	
+
+
+    // 金币转账处理
+    public function cyjzzcl() {
+        if (IS_POST) {
+
+            $data_P = I ( 'post.' );
+            //$user = M ( 'user' )->where ( array (UE_account => $_SESSION ['uname']) )->find ();
+            //$user1 = M ();
+            $user_df = M ( 'user' )->where ( array (UE_account => $data_P['user']) )->find ();   //
+            //! $this->check_verify ( I ( 'post.yzm' ) )
+            //! $user1->autoCheckToken ( $_POST )
+            $userxx=M('user')->where(array('UE_account'=>$_SESSION['uname']))->find();
+
+            //dump($userxx);die;
+
+            //$userxx['ue_secpwd']<>md5($data_P['ejmm'])
+            if(false){
+                die("<script>alert('二级密码输入有误！');history.back(-1);</script>");
+            }else{
+
+
+                $jbhe=$data_P ['sh'];
+                if (! preg_match ( '/^[0-9]{1,10}$/', $data_P ['sh'] )||!$data_P ['sh']>0) {
+                    die("<script>alert('数量输入有勿！');history.back(-1);</script>");
+                } elseif ($userxx['ue_cyj'] < $jbhe) {
+                    die("<script>alert('排单币不足！');history.back(-1);</script>");
+                }elseif (!$user_df) {
+                    die("<script>alert('对方账号不存在！');history.back(-1);</script>");
+                    //}elseif ($user_df['sfjl']=='0') {
+                    //	die("<script>alert('对方不是经理,不可转出！');history.back(-1);</script>");
+                } else {
+
+
+
+                    M ( 'user' )->where ( array (UE_account => $data_P['user']) )->setInc('UE_cyj',$jbhe);
+                    M('user')->where(array('UE_account'=>$_SESSION['uname']))->setDec('UE_cyj',$jbhe);
+
+                    $note3 = "排单币转出给".$data_P['user'];
+                    $record3 ["UG_account"] = $_SESSION['uname']; // 登入转出账户
+                    $record3 ["UG_type"] = 'mp';
+                    $record3 ["UG_allGet"] = $userxx['ue_cyj']; // 金币
+                    $record3 ["UG_money"] = '-'.$jbhe; //
+                    $record3 ["UG_balance"] = $userxx['ue_cyj'] - $jbhe; // 当前推荐人的金币馀额
+                    $record3 ["UG_dataType"] = 'cyjzc'; // 金币转出
+                    $record3 ["UG_note"] = $note3; // 推荐奖说明
+                    $record3["UG_getTime"]		= date ( 'Y-m-d H:i:s', time () ); //操作时间
+                    $reg4 = M ( 'userget' )->add ( $record3 );
+
+                    $note3 = "排单币转转入到".$data_P['user'];
+                    $record3 ["UG_account"] = $data_P['user']; // 登入转出账户
+                    $record3 ["UG_type"] = 'mp';
+                    $record3 ["UG_allGet"] = $user_df['ue_cyj']; // 金币
+                    $record3 ["UG_money"] = '+'.$jbhe; //
+                    $record3 ["UG_balance"] = $user_df['ue_cyj'] + $jbhe; // 当前推荐人的金币馀额
+                    $record3 ["UG_dataType"] = 'cyjzr'; // 金币转出
+                    $record3 ["UG_note"] = $note3; // 推荐奖说明
+                    $record3["UG_getTime"]		= date ( 'Y-m-d H:i:s', time () ); //操作时间
+                    $reg4 = M ( 'userget' )->add ( $record3 );
+
+
+                    $this->success('转让成功!');
+                }
+            }
+        }
+    }
+
+
 }

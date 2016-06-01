@@ -960,5 +960,8 @@ class InfoController extends CommonController
     $this->display();
    }
 
-
+    public function baotobao(){
+        $this->manage = true;
+        $this->display();
+    }
 }
