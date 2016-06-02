@@ -146,6 +146,25 @@ class InfoController extends CommonController
                     die("<script>alert('二级密码输入有误！');history.back(-1);</script>");
                 } else {
 
+                    if (!empty($data_P['wechat'])) {
+                        $iCount = M("user")->where(array('weixin' => $data_P['wechat']))->count();
+                        if ($iCount) {
+                            die("<script>alert('该微信号已经存在!');history.back(-1);</script>");
+                        }
+                    }
+                    if (!empty($data_P['alipay'])) {
+                        $iCount = M("user")->where(array('zfb' => $data_P['alipay']))->count();
+                        if ($iCount) {
+                            die("<script>alert('该支付宝号已经存在!');history.back(-1);</script>");
+                        }
+                    }
+                    if (!empty($data_P['bank_number'])) {
+                        $iCount = M("user")->where(array('yhzh' => $data_P['bank_number']))->count();
+                        if ($iCount) {
+                            die("<script>alert('该银行卡号已经存在!');history.back(-1);</script>");
+                        }
+                    }
+
                     $data_up['weixin'] = $data_P['wechat'];
 
                     $data_up['zfb'] = $data_P['alipay'];

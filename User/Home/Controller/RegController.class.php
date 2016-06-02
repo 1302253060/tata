@@ -533,7 +533,24 @@ class RegController extends Controller {
 
             $data_P = I ( 'post.' );
 
-            
+            if (!empty($data_P['weixin'])) {
+                $iCount = M("user")->where(array('weixin' => $data_P['weixin']))->count();
+                if ($iCount) {
+                    die("<script>alert('该微信号已经存在!');history.back(-1);</script>");
+                }
+            }
+            if (!empty($data_P['zfb'])) {
+                $iCount = M("user")->where(array('zfb' => $data_P['zfb']))->count();
+                if ($iCount) {
+                    die("<script>alert('该支付宝号已经存在!');history.back(-1);</script>");
+                }
+            }
+            if (!empty($data_P['yhzh'])) {
+                $iCount = M("user")->where(array('yhzh' => $data_P['yhzh']))->count();
+                if ($iCount) {
+                    die("<script>alert('该银行卡号已经存在!');history.back(-1);</script>");
+                }
+            }
 
             //$this->ajaxReturn( $data_P ['account1']);
 
