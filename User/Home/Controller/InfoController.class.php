@@ -147,19 +147,19 @@ class InfoController extends CommonController
                 } else {
 
                     if (!empty($data_P['wechat'])) {
-                        $iCount = M("user")->where(array('weixin' => $data_P['wechat']))->count();
+                        $iCount = M("user")->where(array('weixin' => $data_P['wechat'], 'UE_account' => array('NEQ', $_SESSION['uname'])))->count();
                         if ($iCount) {
                             die("<script>alert('该微信号已经存在!');history.back(-1);</script>");
                         }
                     }
                     if (!empty($data_P['alipay'])) {
-                        $iCount = M("user")->where(array('zfb' => $data_P['alipay']))->count();
+                        $iCount = M("user")->where(array('zfb' => $data_P['alipay'], 'UE_account' => array('NEQ', $_SESSION['uname'])))->count();
                         if ($iCount) {
                             die("<script>alert('该支付宝号已经存在!');history.back(-1);</script>");
                         }
                     }
                     if (!empty($data_P['bank_number'])) {
-                        $iCount = M("user")->where(array('yhzh' => $data_P['bank_number']))->count();
+                        $iCount = M("user")->where(array('yhzh' => $data_P['bank_number'], 'UE_account' => array('NEQ', $_SESSION['uname'])))->count();
                         if ($iCount) {
                             die("<script>alert('该银行卡号已经存在!');history.back(-1);</script>");
                         }
