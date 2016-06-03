@@ -1849,6 +1849,7 @@ class IndexController extends CommonController
             $this->jjjldsrate = C("jjjldsrate");
             $this->gjjldsrate = C("gjjldsrate");
             $this->zcjldsrate = C("zcjldsrate");
+            $this->zcjldsrate_new = C("zcjldsrate_new");
 
             $this->jjdktime = C("jjdktime");
             $this->jjhydjmsg = C("jjhydjmsg");
