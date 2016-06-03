@@ -2428,8 +2428,41 @@ public function jbzzcl() {
 					    								if($zcr9 <> ''){
 					    									$zcr10=jlj($zcr9,$ppddxx['jb']*((float)$mmtemparr[8])/100,'经理奖'.$mmtemparr[8].'%');
 					    									if($zcr10 <> ''){
-						    									$zcr11=jlj($zcr10,$ppddxx['jb']*((float)$mmtemparr[9])/100,'经理奖'.$mmtemparr[8].'%');					    										
-						    								}
+						    									$zcr11=jlj($zcr10,$ppddxx['jb']*((float)$mmtemparr[9])/100,'经理奖'.$mmtemparr[8].'%');
+                                                                if($zcr11 <> ''){
+                                                                    $zcr12=jlj($zcr11,$ppddxx['jb']*((float)$mmtemparr[10])/100,'经理奖'.$mmtemparr[9].'%');
+                                                                    if($zcr12 <> ''){
+                                                                        $zcr13=jlj($zcr11,$ppddxx['jb']*((float)$mmtemparr[11])/100,'经理奖'.$mmtemparr[10].'%');
+                                                                        if($zcr13 <> ''){
+                                                                            $zcr14=jlj($zcr13,$ppddxx['jb']*((float)$mmtemparr[12])/100,'经理奖'.$mmtemparr[11].'%');
+                                                                            if($zcr14 <> ''){
+                                                                                $zcr15=jlj($zcr14,$ppddxx['jb']*((float)$mmtemparr[13])/100,'经理奖'.$mmtemparr[12].'%');
+                                                                                if($zcr15 <> ''){
+                                                                                    $zcr16=jlj($zcr15,$ppddxx['jb']*((float)$mmtemparr[14])/100,'经理奖'.$mmtemparr[13].'%');
+                                                                                    if($zcr16 <> ''){
+                                                                                        $zcr17=jlj($zcr16,$ppddxx['jb']*((float)$mmtemparr[15])/100,'经理奖'.$mmtemparr[14].'%');
+                                                                                        if($zcr17 <> ''){
+                                                                                            $zcr18=jlj($zcr17,$ppddxx['jb']*((float)$mmtemparr[16])/100,'经理奖'.$mmtemparr[15].'%');
+                                                                                            if($zcr18 <> ''){
+                                                                                                $zcr19=jlj($zcr18,$ppddxx['jb']*((float)$mmtemparr[17])/100,'经理奖'.$mmtemparr[16].'%');
+                                                                                                if($zcr19 <> ''){
+                                                                                                    $zcr20=jlj($zcr19,$ppddxx['jb']*((float)$mmtemparr[18])/100,'经理奖'.$mmtemparr[17].'%');
+                                                                                                    if($zcr20 <> ''){
+                                                                                                        $zcr21=jlj($zcr20,$ppddxx['jb']*((float)$mmtemparr[19])/100,'经理奖'.$mmtemparr[18].'%');
+                                                                                                        if($zcr21 <> ''){
+                                                                                                            $zcr22=jlj($zcr21,$ppddxx['jb']*((float)$mmtemparr[20])/100,'经理奖'.$mmtemparr[19].'%');
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
 					    								}					    							
 					    							}
 
