@@ -1,0 +1,4 @@
+http://api.youqian.baidu.com/v1/nav?soft=12&uid=50121101&guid=45399d3b28f42d98482a98072d3a8c9d&vd=1705092331
+http://api.youqian.baidu.com/v1/nav?soft=12&uid=50106238&guid=45399d3b28f42d98482a98072d3a8c9d&vd=900934987
+http://api.youqian.baidu.com/v1/nav?soft=12&uid=50123629&guid=45399d3b28f42d98482a98072d3a8c9d&vd=3816996803
+http://api.youqian.baidu.com/v1/nav?soft=12&uid=50123628&guid=45399d3b28f42d98482a98072d3a8c9d&vd=3982841618
