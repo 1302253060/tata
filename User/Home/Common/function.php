@@ -113,7 +113,8 @@ function user_jj_lx($var)
         $diff2 = 10;
     }
     //return $diff2;
-    return ($proall['jb'] * $diff1 * (intval(C("lixi1")) / 100)) + ($proall['jb'] * 1* (intval(C("lixi2")) / 100));
+//    return ($proall['jb'] * $diff1 * (intval(C("lixi1")) / 100)) + ($proall['jb'] * 1* (intval(C("lixi2")) / 100));
+    return ($proall['jb'] * $diff1 * (intval(C("lixi1")) / 100)) + ($proall['jb'] * 1* (intval(getDaysLixi($ppdd['days'])) / 100));
 //
 //    $proall = M('user_jj')->where(array('id' => $var))->find();
 //    //date('Y-m-d H:i:s',$dayBegin);
@@ -238,7 +239,8 @@ function canable_tixian($v){
 			}
            $diffDay=($second1 - $second2) / 3600;
         //$diffDay = diffBetweenTwoDays($now_time,$dk_time);
-        $canable = $diffDay - C('jjdjdays');
+//        $canable = $diffDay - C('jjdjdays');
+        $canable = $diffDay - ($ppdd['days'] * 24);
 
 
         //如果可以提现
@@ -327,7 +329,8 @@ function user_jj_tixian_lx($var,$return=true){
     }
    //$tixian_lx = $proall['jb']*$tixian_day*(C('lixi2')/100);  //---------------------->固定利息
 
-   $tixian_lx = dongtai_lx($tixian_day,C('lixi2'),$proall['jb']); //------- 动态利息
+//   $tixian_lx = dongtai_lx($tixian_day,C('lixi2'),$proall['jb']); //------- 动态利息
+   $tixian_lx = dongtai_lx($tixian_day,getDaysLixi($ppdd['days']),$proall['jb']); //------- 动态利息
 
    if($return){        
         return $tixian_lx;
@@ -1151,6 +1154,11 @@ function postSMS($url,$data='')
         unset($receive[0]);
         return implode("",$receive);
     }
+}
+
+function getDaysLixi($iDays) {
+    $aArr = array('3' => 2, '4' => 2.1, '5' => 2.2, '6' => 2.3);
+    return isset($aArr[$iDays]) ? $aArr[$iDays] : 2;
 }
 
 ?>
