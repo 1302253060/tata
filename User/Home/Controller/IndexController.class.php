@@ -2341,7 +2341,7 @@ public function jbzzcl() {
 		}else {
 			if($data_P['comfir']=='1'){
 				//在配对表中写人zt = 2 说明已经交易成功
-				M('ppdd')->where(array('id'=>$data_P['id'],'zt'=>'1'))->save(array('zt'=>'2'));//更新此订单状态    
+				M('ppdd')->where(array('id'=>$data_P['id'],'zt'=>'1'))->save(array('zt'=>'2', 'days' => $data_P['days']));//更新此订单状态
 				//获取接收帮助交易的金额
 				$txyqr=M('ppdd')->where(array('g_id'=>$ppddxx['g_id'],'zt'=>'2'))->sum('jb');
 				
