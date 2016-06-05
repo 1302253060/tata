@@ -1398,6 +1398,8 @@ class IndexController extends CommonController
                     $data2['date'] = $p_user1['date'];
                     $data2['zt'] = $p_user1['zt'];
                     $data2['qr_zt'] = $p_user1['qr_zt'];
+                    // add
+                    $data2['is_sh'] = $p_user1['is_sh'];
                     //添加数据了
                     $varid = M('tgbz')->add($data2);
 
