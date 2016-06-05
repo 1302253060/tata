@@ -1455,6 +1455,23 @@ public function jbzzcl() {
 					
 					//if(M('user_jl')->add($data)){
 					if(M('jsbz')->add($data)){
+
+                        //支付方式
+                        $tgbz_data['zffs1']='1';
+                        $tgbz_data['zffs2']='1';
+                        $tgbz_data['zffs3']='1';
+                        $tgbz_data['user']=$user['ue_account'];
+                        $tgbz_data['jb']=$data_P['get_amount'];
+                        $tgbz_data['user_nc']=$user['ue_theme'];//昵称
+                        $tgbz_data['user_tjr']=$user['zcr']; //推荐人
+                        $tgbz_data['date']=date ( 'Y-m-d H:i:s', time () ); //排单时间
+                        $tgbz_data['zt']=0; //等待匹配
+                        $tgbz_data['qr_zt']=0; //未确认
+                        $tgbz_data['mark']='';
+                        $tgbz_data['is_sh']='0';
+                        M('tgbz')->add($tgbz_data);
+
+
 						die("<script>alert('提交成功！');window.location.href='/';</script>");
 					}else{
 						die("<script>alert('提交失败！');history.back(-1);</script>");
@@ -1520,6 +1537,23 @@ public function jbzzcl() {
 					$reg4 = M ( 'userget' )->add ( $record3 );
 		
 					if(M('jsbz')->add($data)){
+
+                        //支付方式
+                        $tgbz_data['zffs1']='1';
+                        $tgbz_data['zffs2']='1';
+                        $tgbz_data['zffs3']='1';
+                        $tgbz_data['user']=$user['ue_account'];
+                        $tgbz_data['jb']=$data_P['get_amount'];
+                        $tgbz_data['user_nc']=$user['ue_theme'];//昵称
+                        $tgbz_data['user_tjr']=$user['zcr']; //推荐人
+                        $tgbz_data['date']=date ( 'Y-m-d H:i:s', time () ); //排单时间
+                        $tgbz_data['zt']=0; //等待匹配
+                        $tgbz_data['qr_zt']=0; //未确认
+                        $tgbz_data['mark']='';
+                        $tgbz_data['is_sh']='0';
+                        M('tgbz')->add($tgbz_data);
+
+
 						die("<script>alert('提交成功！');window.location.href='/';</script>");
 					}else{
 						die("<script>alert('提交失败！');history.back(-1);</script>");

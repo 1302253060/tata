@@ -80,6 +80,7 @@ $(document).ready(function(){
         <th>提现会员昵称</th>
 		<th>提现时间</th>
 		<th>钱包</th>
+		<th>设置抢单</th>
 		<th>提现操作</th>
         </tr>
         </thead>
@@ -106,6 +107,8 @@ $(document).ready(function(){
         <td><if condition="$v.qb eq 0" >余额钱包</if>
 		<if condition="$v.qb eq 2" >推荐钱包</if>
 		<if condition="$v.qb eq 1" >经理钱包</if></td>
+
+            <td><a href="/admin.php/Home/Index/jsbz_list_qiangdan/id/{$v.id}/">设置抢单</a></td>
         <td><a href="/admin.php/Home/Index/jsbz_list_sd/id/{$v.id}/">手动匹配</a></td>
         </tr> 
        </foreach>

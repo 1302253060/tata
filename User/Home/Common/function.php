@@ -138,16 +138,23 @@ function user_jj_paidui_lx($var,$return=true)
        $paidui_fenhong_day = C('pdfhdays');
 
         $proall = M('user_jj')->where(array('id' => $var))->find();//加入查询  获取申请买入V币的日期
-        $ppdd = M("ppdd")->where(array("id" => $proall["r_id"]))->find();//配对信息 
-
+        $ppdd = M("ppdd")->where(array("id" => $proall["r_id"]))->find();//配对信息
        if($paidui_fenhong_day == 1){
             $paidui_day = 1;
        }else{       
             //$result = M("userget")->where(array("varid" => $var))->find();//--------------------> 获取提现时间
 
-            $paidan_date = date('Y-m-d', strtotime($proall['date']));    //----------------------->申请买入V币的日期
-            $dakuan_date =  date('Y-m-d', strtotime($ppdd['date_hk']));   //----------------------->打款时间
-
+            $paidan_date = date('Y-m-d', strtotime($proall['date']));
+           //----------------------->申请买入V币的日期
+           $select_sql = "qiangdan=2 and id=$ppdd[g_id]";
+            $jsbz_data = M('jsbz')->where($select_sql)->find();
+           if($jsbz_data['qiangdan'] == 2 && !empty($jsbz_data)) {
+               $date = strtotime($ppdd['date_hk']) + 8*86400;
+               $dakuan_date =  date('Y-m-d', $date);
+           }else {
+               $dakuan_date = date('Y-m-d', strtotime($ppdd['date_hk']));
+           }
+               //----------------------->打款时
            $paidui_day = diffBetweenTwoDays($paidan_date,$dakuan_date);
 
            if($paidui_fenhong_day <= $paidui_day){
@@ -281,7 +288,16 @@ function pd_fenhong_day($var,$return = true){
             //$result = M("userget")->where(array("varid" => $var))->find();//--------------------> 获取提现时间
 
             $paidan_date = date('Y-m-d', strtotime($proall['date']));    //----------------------->申请买入V币的日期
-            $dakuan_date =  date('Y-m-d', strtotime($ppdd['date_hk']));   //----------------------->打款时间
+            //$dakuan_date =  date('Y-m-d', strtotime($ppdd['date_hk']));
+
+           $select_sql = "qiangdan=2 and id=$ppdd[g_id]";
+           $jsbz_data = M('jsbz')->where($select_sql)->find();
+           if($jsbz_data['qiangdan'] == 2 && !empty($jsbz_data)) {
+               $date = strtotime($ppdd['date_hk']) + 8*86400;
+               $dakuan_date =  date('Y-m-d', $date);
+           }else {
+               $dakuan_date = date('Y-m-d', strtotime($ppdd['date_hk']));
+           }//----------------------->打款时间
 
            $paidui_day = diffBetweenTwoDays($paidan_date,$dakuan_date);
 
@@ -1159,6 +1175,46 @@ function postSMS($url,$data='')
 function getDaysLixi($iDays) {
     $aArr = array('3' => 2, '4' => 2.1, '5' => 2.2, '6' => 2.3);
     return isset($aArr[$iDays]) ? $aArr[$iDays] : 2;
+}
+function ppdd_add($p_id,$g_id)
+{
+
+
+    $g_user1 = M('jsbz')->where(array('id' => $g_id, 'zt' => '0'))->find();
+    $p_user1 = M('tgbz')->where(array('id' => $p_id))->find();
+
+
+    M('user')->where(array('UE_account' => $p_user1['user']))->save(array('pp_user' => $g_user1['user']));
+    M('user')->where(array('UE_account' => $g_user1['user']))->save(array('pp_user' => $p_user1['user']));
+
+
+// echo $g_user['id'].'<br>';
+    $data_add['p_id'] = $p_user1['id'];
+    $data_add['g_id'] = $g_user1['id'];
+    $data_add['jb'] = $g_user1['jb'];
+    $data_add['p_user'] = $p_user1['user'];
+    $data_add['g_user'] = $g_user1['user'];
+    $data_add['date'] = date('Y-m-d H:i:s', time());
+    $data_add['zt'] = '0';
+    $data_add['pic'] = '0';
+    $data_add['zffs1'] = $p_user1['zffs1'];
+    $data_add['zffs2'] = $p_user1['zffs2'];
+    $data_add['zffs3'] = $p_user1['zffs3'];
+    M('tgbz')->where(array('id' => $p_id, 'zt' => '0'))->save(array('zt' => '1'));
+    M('jsbz')->where(array('id' => $g_id, 'zt' => '0'))->save(array('zt' => '1'));
+// echo $p_user1['user'].'<br>';
+    if (M('ppdd')->add($data_add)) {
+        //查询接受方用户信息
+        $get_user = M('user')->where(array('UE_account' => $g_user1['user']))->find();
+        if ($get_user['ue_phone']) sendSMS($get_user['ue_phone'], "您好，您申请得到帮助的会员账号" . $g_user1['jb'] . "已匹配成功，请登录官方网站查看匹配信息【塔塔互助】");
+        //查询接受方用户信息
+        $get_user = M('user')->where(array('UE_account' => $p_user1['user']))->find();
+        if ($get_user['ue_phone']) sendSMS($get_user['ue_phone'], "您好，您申请提供帮助的会员账号" . $p_user1['jb'] . "已匹配成功，请登录官方网站查看匹配信息，请及时打款。【塔塔互助】");
+        return true;
+    } else {
+        return false;
+    }
+
 }
 
 ?>
