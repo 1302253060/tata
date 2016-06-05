@@ -1318,6 +1318,23 @@ class IndexController extends CommonController
         }
     }
 
+
+    /**
+     * 设置抢单
+     */
+    public function jsbz_list_qiangdan()
+    {
+         $danzi_id = I('get.id');
+         if($danzi_id != '') {
+             $tgbzuser = M('jsbz')->where(array('id' => $danzi_id, 'zt'=>0, 'qiangdan'=>0))->find();//查询是否可以放出去
+             if($tgbzuser) {
+                if(M('jsbz')->where(array('id' => $danzi_id, 'zt'=>0, 'qiangdan'=>0))->save(array('qiangdan'=>1))) {
+                    echo '设置抢单成功';
+                }
+             }
+         }
+    }
+
     //确认匹配
 
    /* array (

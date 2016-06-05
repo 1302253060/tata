@@ -983,4 +983,41 @@ class InfoController extends CommonController
         $this->manage = true;
         $this->display();
     }
+
+    public function qiangdan_list()
+    {
+        $Jsbz = M('jsbz');
+        //$jsbz_data = $Jsbz->where(array('zt'=>0, 'qiangdan'=>0, 'user!='=>$_SESSION['uname']))->order('date DESC')->select();
+        $where_sql = "zt=0 and qiangdan=1 and user!='$_SESSION[uname]'";
+        $jsbz_data = $Jsbz->where($where_sql)->order('date DESC')->select();
+        $this->assign('jsbz_data', $jsbz_data);
+        $this->display();
+
+    }
+
+    public function qiangdan() {
+        $id = I('get.id');
+        $JsbzObj = M('jsbz');
+        $jsbz_data = $JsbzObj->where(array('zt'=>0, 'qiangdan'=>0, 'id'=>$id))->find();
+        $user_data = M('user')->where(array('UE_ID'=>$_SESSION['uid']))->find();
+
+        $data2['zffs1'] = $jsbz_data['zffs1'];
+        $data2['zffs2'] = $jsbz_data['zffs2'];
+        $data2['zffs3'] = $jsbz_data['zffs3'];
+        $data2['user'] = $user_data['ue_account'];
+        $data2['jb'] = $jsbz_data['jb'];//-------------------------------------->以实际匹配的金币为准确
+        $data2['user_nc'] = $user_data['ue_truename'];
+        $data2['user_tjr'] = $user_data['ue_accname'];
+        $data2['date'] = $jsbz_data['date'];
+        $data2['zt'] = $jsbz_data['zt'];
+        $data2['qr_zt'] = $jsbz_data['qr_zt'];
+        //添加数据了
+        $varid = M('tgbz')->add($data2);
+        //$p_id2充值ID ,$val提现ID
+        //与买入V币者为参照物
+        if (ppdd_add($varid, $jsbz_data['id'])) {
+            M('tgbz')->where(array('id' => $data['pid']))->setInc('cf_ds', 1);   //------------------------》这个是什么意思还没搞明白 并且最好他们还删除了该条记录
+        }
+
+    }
 }
