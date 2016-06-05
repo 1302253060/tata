@@ -1014,7 +1014,7 @@ class IndexController extends CommonController
         //$map ['UG_dataType'] = array('IN',array('mrfh','tjj','kdj','mrldj','glj'));
 
         $map['zt'] = 0;
-        $map['qiangdan'] = 0;
+        //$map['qiangdan'] = 0;
 
         if (I('get.cz') == 1) {
             $map['zt'] = 1;
