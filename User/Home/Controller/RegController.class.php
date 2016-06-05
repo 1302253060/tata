@@ -600,10 +600,10 @@ class RegController extends Controller {
 
             $data_arr ["UE_regTime"] = date ( 'Y-m-d H:i:s', time () );
 
-			$data_arr ["weixin"] = $data_P ['weixin'];
-			$data_arr ["zfb"] = $data_P ['zfb'];
-			$data_arr ["yhmc"] = $data_P ['yhmc'];
-			$data_arr ["yhzh"] = $data_P ['yhzh'];
+//			$data_arr ["weixin"] = $data_P ['weixin'];
+//			$data_arr ["zfb"] = $data_P ['zfb'];
+//			$data_arr ["yhmc"] = $data_P ['yhmc'];
+//			$data_arr ["yhzh"] = $data_P ['yhzh'];
 			
             //$data_arr ["__hash__"] = $data_P ['__hash__'];
 
