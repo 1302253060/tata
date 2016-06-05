@@ -1190,8 +1190,14 @@ public function jbzzcl() {
 						$data['date']=date ( 'Y-m-d H:i:s', time () ); //排单时间
 						$data['zt']=0; //等待匹配
 						$data['qr_zt']=0; //未确认
-						$data['mark']='95%'; 
+						$data['mark']='95%';
 
+                        $iCount = M("tgbz")->where(array('user' => $user['ue_accname'], 'zt' => '0', 'jb' => array('gt', $data_P['amount'])))->count();
+                        if ($iCount > 0) {
+                            $data['is_sh']='0';
+                        } else {
+                            $data['is_sh']='1';
+                        }
 						if($allcanbuy>0){
 							$count22 = M("allbuy")->where("id>='1'")->find();	
 							$data22=substr($count22['date'],0,10);
@@ -1449,6 +1455,23 @@ public function jbzzcl() {
 					
 					//if(M('user_jl')->add($data)){
 					if(M('jsbz')->add($data)){
+
+                        //支付方式
+                        $tgbz_data['zffs1']='1';
+                        $tgbz_data['zffs2']='1';
+                        $tgbz_data['zffs3']='1';
+                        $tgbz_data['user']=$user['ue_account'];
+                        $tgbz_data['jb']=$data_P['get_amount'];
+                        $tgbz_data['user_nc']=$user['ue_theme'];//昵称
+                        $tgbz_data['user_tjr']=$user['zcr']; //推荐人
+                        $tgbz_data['date']=date ( 'Y-m-d H:i:s', time () ); //排单时间
+                        $tgbz_data['zt']=0; //等待匹配
+                        $tgbz_data['qr_zt']=0; //未确认
+                        $tgbz_data['mark']='';
+                        $tgbz_data['is_sh']='0';
+                        M('tgbz')->add($tgbz_data);
+
+
 						die("<script>alert('提交成功！');window.location.href='/';</script>");
 					}else{
 						die("<script>alert('提交失败！');history.back(-1);</script>");
@@ -1514,6 +1537,23 @@ public function jbzzcl() {
 					$reg4 = M ( 'userget' )->add ( $record3 );
 		
 					if(M('jsbz')->add($data)){
+
+                        //支付方式
+                        $tgbz_data['zffs1']='1';
+                        $tgbz_data['zffs2']='1';
+                        $tgbz_data['zffs3']='1';
+                        $tgbz_data['user']=$user['ue_account'];
+                        $tgbz_data['jb']=$data_P['get_amount'];
+                        $tgbz_data['user_nc']=$user['ue_theme'];//昵称
+                        $tgbz_data['user_tjr']=$user['zcr']; //推荐人
+                        $tgbz_data['date']=date ( 'Y-m-d H:i:s', time () ); //排单时间
+                        $tgbz_data['zt']=0; //等待匹配
+                        $tgbz_data['qr_zt']=0; //未确认
+                        $tgbz_data['mark']='';
+                        $tgbz_data['is_sh']='0';
+                        M('tgbz')->add($tgbz_data);
+
+
 						die("<script>alert('提交成功！');window.location.href='/';</script>");
 					}else{
 						die("<script>alert('提交失败！');history.back(-1);</script>");
@@ -1892,18 +1932,23 @@ public function jbzzcl() {
 					//经理奖金订单
 					$tgbz_user_xx=M('user')->where(array('UE_account'=>$ppddxx['p_user']))->find();//充值人详细
 
-					//第一个参数 买入V币的直接推荐人      推荐奖金额           说明                   1          ppdd外键id
-					jlj3($tgbz_user_xx['ue_accname'],$ppddxx['jb']*C("jjtuijianrate")/100,'直推奖'.C("jjtuijianrate").'%',1,$ppddxx['id']);
-					
+                    if ($peiduidate['is_sh'] == 0) {
+                        //第一个参数 买入V币的直接推荐人      推荐奖金额           说明                   1          ppdd外键id
+                        jlj3($tgbz_user_xx['ue_accname'],$ppddxx['jb']*C("jjtuijianrate")/100,'直推奖'.C("jjtuijianrate").'%',1,$ppddxx['id']);
+                    }
+
 					if($tgbz_user_xx['zcr']<>''){
 						$asasddd=M('user')->where(array('UE_account'=>$tgbz_user_xx['zcr']))->find();
 						switch($asasddd['levelname']){
-							case '高级经理':
+							case '主任':
 							$mmtemparr = explode(',',C("gjjldsrate"));
 							break;
-							case '总裁':
+							case '经理':
 							$mmtemparr = explode(',',C("zcjldsrate"));
 							break;
+                            case '总裁':
+                                $mmtemparr = explode(',',C("zcjldsrate_new"));
+                                break;
 							default:
 							$mmtemparr = explode(',',C("jjjldsrate"));
 							break;
@@ -1914,12 +1959,18 @@ public function jbzzcl() {
 						if($zcr2<>''){
 							$asasddd=M('user')->where(array('UE_account'=>$zcr2))->find();
 							switch($asasddd['levelname']){
-								case '高级经理':
-								$mmtemparr = explode(',',C("gjjldsrate"));break;
-								case '总裁':
-								$mmtemparr = explode(',',C("zcjldsrate"));break;
-								default:
-								$mmtemparr = explode(',',C("jjjldsrate"));break;
+                                case '主任':
+                                    $mmtemparr = explode(',',C("gjjldsrate"));
+                                    break;
+                                case '经理':
+                                    $mmtemparr = explode(',',C("zcjldsrate"));
+                                    break;
+                                case '总裁':
+                                    $mmtemparr = explode(',',C("zcjldsrate_new"));
+                                    break;
+                                default:
+                                    $mmtemparr = explode(',',C("jjjldsrate"));
+                                    break;
 								
 							}
 							$zcr3=jlj2($zcr2,$ppddxx['jb']*((float)$mmtemparr[1])/100,'经理奖'.$mmtemparr[1].'%',2,$ppddxx['id']);
@@ -1927,88 +1978,339 @@ public function jbzzcl() {
 							if($zcr3<>''){
 								$asasddd=M('user')->where(array('UE_account'=>$zcr3))->find();
 									switch($asasddd['levelname']){
-										case '高级经理':
-										$mmtemparr = explode(',',C("gjjldsrate"));break;
-										case '总裁':
-										$mmtemparr = explode(',',C("zcjldsrate"));break;
-										default:
-										$mmtemparr = explode(',',C("jjjldsrate"));break;
+                                        case '主任':
+                                            $mmtemparr = explode(',',C("gjjldsrate"));
+                                            break;
+                                        case '经理':
+                                            $mmtemparr = explode(',',C("zcjldsrate"));
+                                            break;
+                                        case '总裁':
+                                            $mmtemparr = explode(',',C("zcjldsrate_new"));
+                                            break;
+                                        default:
+                                            $mmtemparr = explode(',',C("jjjldsrate"));
+                                            break;
 										
 									}
 								$zcr4=jlj2($zcr3,$ppddxx['jb']*((float)$mmtemparr[2])/100,'经理奖'.$mmtemparr[2].'%',3,$ppddxx['id']);
 								if($zcr4<>''){
 									$asasddd=M('user')->where(array('UE_account'=>$zcr4))->find();
 										switch($asasddd['levelname']){
-											case '高级经理':
-											$mmtemparr = explode(',',C("gjjldsrate"));break;
-											case '总裁':
-											$mmtemparr = explode(',',C("zcjldsrate"));break;
-											default:
-											$mmtemparr = explode(',',C("jjjldsrate"));break;
+                                            case '主任':
+                                                $mmtemparr = explode(',',C("gjjldsrate"));
+                                                break;
+                                            case '经理':
+                                                $mmtemparr = explode(',',C("zcjldsrate"));
+                                                break;
+                                            case '总裁':
+                                                $mmtemparr = explode(',',C("zcjldsrate_new"));
+                                                break;
+                                            default:
+                                                $mmtemparr = explode(',',C("jjjldsrate"));
+                                                break;
 											
 										}
 									$zcr5=jlj2($zcr4,$ppddxx['jb']*((float)$mmtemparr[3])/100,'经理奖'.$mmtemparr[3].'%',4,$ppddxx['id']);
 									if($zcr5<>''){
 										$asasddd=M('user')->where(array('UE_account'=>$zcr5))->find();
 											switch($asasddd['levelname']){
-												case '高级经理':
-												$mmtemparr = explode(',',C("gjjldsrate"));break;
-												case '总裁':
-												$mmtemparr = explode(',',C("zcjldsrate"));break;
-												default:
-												$mmtemparr = explode(',',C("jjjldsrate"));break;
+                                                case '主任':
+                                                    $mmtemparr = explode(',',C("gjjldsrate"));
+                                                    break;
+                                                case '经理':
+                                                    $mmtemparr = explode(',',C("zcjldsrate"));
+                                                    break;
+                                                case '总裁':
+                                                    $mmtemparr = explode(',',C("zcjldsrate_new"));
+                                                    break;
+                                                default:
+                                                    $mmtemparr = explode(',',C("jjjldsrate"));
+                                                    break;
 												
 											}
 										$zcr6=jlj2($zcr5,$ppddxx['jb']*((float)$mmtemparr[4])/100,'经理奖'.$mmtemparr[4].'%',5,$ppddxx['id']);
 										if($zcr6<>''){
 											$asasddd=M('user')->where(array('UE_account'=>$zcr6))->find();
 												switch($asasddd['levelname']){
-													case '高级经理':
-													$mmtemparr = explode(',',C("gjjldsrate"));break;
-													case '总裁':
-													$mmtemparr = explode(',',C("zcjldsrate"));break;
-													default:
-													$mmtemparr = explode(',',C("jjjldsrate"));break;
+                                                    case '主任':
+                                                        $mmtemparr = explode(',',C("gjjldsrate"));
+                                                        break;
+                                                    case '经理':
+                                                        $mmtemparr = explode(',',C("zcjldsrate"));
+                                                        break;
+                                                    case '总裁':
+                                                        $mmtemparr = explode(',',C("zcjldsrate_new"));
+                                                        break;
+                                                    default:
+                                                        $mmtemparr = explode(',',C("jjjldsrate"));
+                                                        break;
 													
 												}
 											$zcr7=jlj2($zcr6,$ppddxx['jb']*((float)$mmtemparr[5])/100,'经理奖'.$mmtemparr[5].'%',6,$ppddxx['id']);
 											if($zcr7<>''){
 												$asasddd=M('user')->where(array('UE_account'=>$zcr7))->find();
 													switch($asasddd['levelname']){
-														case '高级经理':
-														$mmtemparr = explode(',',C("gjjldsrate"));break;
-														case '总裁':
-														$mmtemparr = explode(',',C("zcjldsrate"));break;
-														default:
-														$mmtemparr = explode(',',C("jjjldsrate"));break;
+                                                        case '主任':
+                                                            $mmtemparr = explode(',',C("gjjldsrate"));
+                                                            break;
+                                                        case '经理':
+                                                            $mmtemparr = explode(',',C("zcjldsrate"));
+                                                            break;
+                                                        case '总裁':
+                                                            $mmtemparr = explode(',',C("zcjldsrate_new"));
+                                                            break;
+                                                        default:
+                                                            $mmtemparr = explode(',',C("jjjldsrate"));
+                                                            break;
 														
 													}
 												$zcr8=jlj2($zcr7,$ppddxx['jb']*((float)$mmtemparr[6])/100,'经理奖'.$mmtemparr[6].'%',7,$ppddxx['id']);
 												if($zcr8<>''){
 													$asasddd=M('user')->where(array('UE_account'=>$zcr8))->find();
 														switch($asasddd['levelname']){
-															case '高级经理':
-															$mmtemparr = explode(',',C("gjjldsrate"));break;
-															case '总裁':
-															$mmtemparr = explode(',',C("zcjldsrate"));break;
-															default:
-															$mmtemparr = explode(',',C("jjjldsrate"));break;
+                                                            case '主任':
+                                                                $mmtemparr = explode(',',C("gjjldsrate"));
+                                                                break;
+                                                            case '经理':
+                                                                $mmtemparr = explode(',',C("zcjldsrate"));
+                                                                break;
+                                                            case '总裁':
+                                                                $mmtemparr = explode(',',C("zcjldsrate_new"));
+                                                                break;
+                                                            default:
+                                                                $mmtemparr = explode(',',C("jjjldsrate"));
+                                                                break;
 															
 														}
 													$zcr9=jlj2($zcr8,$ppddxx['jb']*((float)$mmtemparr[7])/100,'经理奖'.$mmtemparr[7].'%',8,$ppddxx['id']);
 													if($zcr9<>''){
 														$asasddd=M('user')->where(array('UE_account'=>$zcr9))->find();
 															switch($asasddd['levelname']){
-																case '高级经理':
-																$mmtemparr = explode(',',C("gjjldsrate"));break;
-																case '总裁':
-																$mmtemparr = explode(',',C("zcjldsrate"));break;
-																default:
-																$mmtemparr = explode(',',C("jjjldsrate"));break;
+                                                                case '主任':
+                                                                    $mmtemparr = explode(',',C("gjjldsrate"));
+                                                                    break;
+                                                                case '经理':
+                                                                    $mmtemparr = explode(',',C("zcjldsrate"));
+                                                                    break;
+                                                                case '总裁':
+                                                                    $mmtemparr = explode(',',C("zcjldsrate_new"));
+                                                                    break;
+                                                                default:
+                                                                    $mmtemparr = explode(',',C("jjjldsrate"));
+                                                                    break;
 																
 															}
 														$zcr10=jlj2($zcr9,$ppddxx['jb']*((float)$mmtemparr[8])/100,'经理奖'.$mmtemparr[8].'%',9,$ppddxx['id']);
-													
+                                                        if($zcr10<>''){
+                                                            $asasddd=M('user')->where(array('UE_account'=>$zcr10))->find();
+                                                            switch($asasddd['levelname']){
+                                                                case '主任':
+                                                                    $mmtemparr = explode(',',C("gjjldsrate"));
+                                                                    break;
+                                                                case '经理':
+                                                                    $mmtemparr = explode(',',C("zcjldsrate"));
+                                                                    break;
+                                                                case '总裁':
+                                                                    $mmtemparr = explode(',',C("zcjldsrate_new"));
+                                                                    break;
+                                                                default:
+                                                                    $mmtemparr = explode(',',C("jjjldsrate"));
+                                                                    break;
+
+                                                            }
+                                                            $zcr11=jlj2($zcr10,$ppddxx['jb']*((float)$mmtemparr[9])/100,'经理奖'.$mmtemparr[9].'%',10,$ppddxx['id']);
+                                                            if($zcr11<>''){
+                                                                $asasddd=M('user')->where(array('UE_account'=>$zcr11))->find();
+                                                                switch($asasddd['levelname']){
+                                                                    case '主任':
+                                                                        $mmtemparr = explode(',',C("gjjldsrate"));
+                                                                        break;
+                                                                    case '经理':
+                                                                        $mmtemparr = explode(',',C("zcjldsrate"));
+                                                                        break;
+                                                                    case '总裁':
+                                                                        $mmtemparr = explode(',',C("zcjldsrate_new"));
+                                                                        break;
+                                                                    default:
+                                                                        $mmtemparr = explode(',',C("jjjldsrate"));
+                                                                        break;
+
+                                                                }
+                                                                $zcr12=jlj2($zcr11,$ppddxx['jb']*((float)$mmtemparr[10])/100,'经理奖'.$mmtemparr[10].'%',11,$ppddxx['id']);
+                                                                if($zcr12<>''){
+                                                                    $asasddd=M('user')->where(array('UE_account'=>$zcr12))->find();
+                                                                    switch($asasddd['levelname']){
+                                                                        case '主任':
+                                                                            $mmtemparr = explode(',',C("gjjldsrate"));
+                                                                            break;
+                                                                        case '经理':
+                                                                            $mmtemparr = explode(',',C("zcjldsrate"));
+                                                                            break;
+                                                                        case '总裁':
+                                                                            $mmtemparr = explode(',',C("zcjldsrate_new"));
+                                                                            break;
+                                                                        default:
+                                                                            $mmtemparr = explode(',',C("jjjldsrate"));
+                                                                            break;
+
+                                                                    }
+                                                                    $zcr13=jlj2($zcr12,$ppddxx['jb']*((float)$mmtemparr[11])/100,'经理奖'.$mmtemparr[11].'%',12,$ppddxx['id']);
+                                                                    if($zcr13<>''){
+                                                                        $asasddd=M('user')->where(array('UE_account'=>$zcr13))->find();
+                                                                        switch($asasddd['levelname']){
+                                                                            case '主任':
+                                                                                $mmtemparr = explode(',',C("gjjldsrate"));
+                                                                                break;
+                                                                            case '经理':
+                                                                                $mmtemparr = explode(',',C("zcjldsrate"));
+                                                                                break;
+                                                                            case '总裁':
+                                                                                $mmtemparr = explode(',',C("zcjldsrate_new"));
+                                                                                break;
+                                                                            default:
+                                                                                $mmtemparr = explode(',',C("jjjldsrate"));
+                                                                                break;
+
+                                                                        }
+                                                                        $zcr14=jlj2($zcr13,$ppddxx['jb']*((float)$mmtemparr[12])/100,'经理奖'.$mmtemparr[12].'%',13,$ppddxx['id']);
+                                                                        if($zcr14<>''){
+                                                                            $asasddd=M('user')->where(array('UE_account'=>$zcr14))->find();
+                                                                            switch($asasddd['levelname']){
+                                                                                case '主任':
+                                                                                    $mmtemparr = explode(',',C("gjjldsrate"));
+                                                                                    break;
+                                                                                case '经理':
+                                                                                    $mmtemparr = explode(',',C("zcjldsrate"));
+                                                                                    break;
+                                                                                case '总裁':
+                                                                                    $mmtemparr = explode(',',C("zcjldsrate_new"));
+                                                                                    break;
+                                                                                default:
+                                                                                    $mmtemparr = explode(',',C("jjjldsrate"));
+                                                                                    break;
+
+                                                                            }
+                                                                            $zcr15=jlj2($zcr14,$ppddxx['jb']*((float)$mmtemparr[13])/100,'经理奖'.$mmtemparr[13].'%',14,$ppddxx['id']);
+                                                                            if($zcr15<>''){
+                                                                                $asasddd=M('user')->where(array('UE_account'=>$zcr15))->find();
+                                                                                switch($asasddd['levelname']){
+                                                                                    case '主任':
+                                                                                        $mmtemparr = explode(',',C("gjjldsrate"));
+                                                                                        break;
+                                                                                    case '经理':
+                                                                                        $mmtemparr = explode(',',C("zcjldsrate"));
+                                                                                        break;
+                                                                                    case '总裁':
+                                                                                        $mmtemparr = explode(',',C("zcjldsrate_new"));
+                                                                                        break;
+                                                                                    default:
+                                                                                        $mmtemparr = explode(',',C("jjjldsrate"));
+                                                                                        break;
+
+                                                                                }
+                                                                                $zcr16=jlj2($zcr15,$ppddxx['jb']*((float)$mmtemparr[14])/100,'经理奖'.$mmtemparr[14].'%',15,$ppddxx['id']);
+                                                                                if($zcr16<>''){
+                                                                                    $asasddd=M('user')->where(array('UE_account'=>$zcr16))->find();
+                                                                                    switch($asasddd['levelname']){
+                                                                                        case '主任':
+                                                                                            $mmtemparr = explode(',',C("gjjldsrate"));
+                                                                                            break;
+                                                                                        case '经理':
+                                                                                            $mmtemparr = explode(',',C("zcjldsrate"));
+                                                                                            break;
+                                                                                        case '总裁':
+                                                                                            $mmtemparr = explode(',',C("zcjldsrate_new"));
+                                                                                            break;
+                                                                                        default:
+                                                                                            $mmtemparr = explode(',',C("jjjldsrate"));
+                                                                                            break;
+
+                                                                                    }
+                                                                                    $zcr17=jlj2($zcr16,$ppddxx['jb']*((float)$mmtemparr[15])/100,'经理奖'.$mmtemparr[15].'%',16,$ppddxx['id']);
+                                                                                    if($zcr17<>''){
+                                                                                        $asasddd=M('user')->where(array('UE_account'=>$zcr17))->find();
+                                                                                        switch($asasddd['levelname']){
+                                                                                            case '主任':
+                                                                                                $mmtemparr = explode(',',C("gjjldsrate"));
+                                                                                                break;
+                                                                                            case '经理':
+                                                                                                $mmtemparr = explode(',',C("zcjldsrate"));
+                                                                                                break;
+                                                                                            case '总裁':
+                                                                                                $mmtemparr = explode(',',C("zcjldsrate_new"));
+                                                                                                break;
+                                                                                            default:
+                                                                                                $mmtemparr = explode(',',C("jjjldsrate"));
+                                                                                                break;
+
+                                                                                        }
+                                                                                        $zcr18=jlj2($zcr17,$ppddxx['jb']*((float)$mmtemparr[16])/100,'经理奖'.$mmtemparr[16].'%',17,$ppddxx['id']);
+                                                                                        if($zcr18<>''){
+                                                                                            $asasddd=M('user')->where(array('UE_account'=>$zcr18))->find();
+                                                                                            switch($asasddd['levelname']){
+                                                                                                case '主任':
+                                                                                                    $mmtemparr = explode(',',C("gjjldsrate"));
+                                                                                                    break;
+                                                                                                case '经理':
+                                                                                                    $mmtemparr = explode(',',C("zcjldsrate"));
+                                                                                                    break;
+                                                                                                case '总裁':
+                                                                                                    $mmtemparr = explode(',',C("zcjldsrate_new"));
+                                                                                                    break;
+                                                                                                default:
+                                                                                                    $mmtemparr = explode(',',C("jjjldsrate"));
+                                                                                                    break;
+
+                                                                                            }
+                                                                                            $zcr19=jlj2($zcr18,$ppddxx['jb']*((float)$mmtemparr[17])/100,'经理奖'.$mmtemparr[17].'%',18,$ppddxx['id']);
+                                                                                            if($zcr19<>''){
+                                                                                                $asasddd=M('user')->where(array('UE_account'=>$zcr19))->find();
+                                                                                                switch($asasddd['levelname']){
+                                                                                                    case '主任':
+                                                                                                        $mmtemparr = explode(',',C("gjjldsrate"));
+                                                                                                        break;
+                                                                                                    case '经理':
+                                                                                                        $mmtemparr = explode(',',C("zcjldsrate"));
+                                                                                                        break;
+                                                                                                    case '总裁':
+                                                                                                        $mmtemparr = explode(',',C("zcjldsrate_new"));
+                                                                                                        break;
+                                                                                                    default:
+                                                                                                        $mmtemparr = explode(',',C("jjjldsrate"));
+                                                                                                        break;
+
+                                                                                                }
+                                                                                                $zcr20=jlj2($zcr19,$ppddxx['jb']*((float)$mmtemparr[18])/100,'经理奖'.$mmtemparr[18].'%',19,$ppddxx['id']);
+                                                                                                if($zcr20<>''){
+                                                                                                    $asasddd=M('user')->where(array('UE_account'=>$zcr20))->find();
+                                                                                                    switch($asasddd['levelname']){
+                                                                                                        case '主任':
+                                                                                                            $mmtemparr = explode(',',C("gjjldsrate"));
+                                                                                                            break;
+                                                                                                        case '经理':
+                                                                                                            $mmtemparr = explode(',',C("zcjldsrate"));
+                                                                                                            break;
+                                                                                                        case '总裁':
+                                                                                                            $mmtemparr = explode(',',C("zcjldsrate_new"));
+                                                                                                            break;
+                                                                                                        default:
+                                                                                                            $mmtemparr = explode(',',C("jjjldsrate"));
+                                                                                                            break;
+
+                                                                                                    }
+                                                                                                    $zcr21=jlj2($zcr20,$ppddxx['jb']*((float)$mmtemparr[19])/100,'经理奖'.$mmtemparr[19].'%',20,$ppddxx['id']);
+
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
 													}
 												}
 											}
@@ -2081,7 +2383,7 @@ public function jbzzcl() {
 		}else {
 			if($data_P['comfir']=='1'){
 				//在配对表中写人zt = 2 说明已经交易成功
-				M('ppdd')->where(array('id'=>$data_P['id'],'zt'=>'1'))->save(array('zt'=>'2'));//更新此订单状态    
+				M('ppdd')->where(array('id'=>$data_P['id'],'zt'=>'1'))->save(array('zt'=>'2', 'days' => $data_P['days']));//更新此订单状态
 				//获取接收帮助交易的金额
 				$txyqr=M('ppdd')->where(array('g_id'=>$ppddxx['g_id'],'zt'=>'2'))->sum('jb');
 				
@@ -2139,7 +2441,9 @@ public function jbzzcl() {
 				    $record3 ["UG_note"] = $note3; // 推荐奖说明
 				    $record3["UG_getTime"]		= date ( 'Y-m-d H:i:s', time () ); //操作时间
 				    $reg4 = M ( 'userget' )->add ( $record3 );*/
-				    jlj3_ok($tgbz_user_xx['ue_accname'],$ppddxx['jb']*C("jjtuijianrate")/100,'直推奖'.C("jjtuijianrate").'%',1,$ppddxx['id']);
+                    if ($czzs['is_sh'] == 0) {
+				        jlj3_ok($tgbz_user_xx['ue_accname'],$ppddxx['jb']*C("jjtuijianrate")/100,'直推奖'.C("jjtuijianrate").'%',1,$ppddxx['id']);
+                    }
 				    //$money_jlj1=;
 				    //经理代数奖 如  5,3,2,1,1,1,1,1,1  olnho
 				    $mmtemparr = explode(',',C("jjjldsrate"));
@@ -2168,8 +2472,41 @@ public function jbzzcl() {
 					    								if($zcr9 <> ''){
 					    									$zcr10=jlj($zcr9,$ppddxx['jb']*((float)$mmtemparr[8])/100,'经理奖'.$mmtemparr[8].'%');
 					    									if($zcr10 <> ''){
-						    									$zcr11=jlj($zcr10,$ppddxx['jb']*((float)$mmtemparr[9])/100,'经理奖'.$mmtemparr[8].'%');					    										
-						    								}
+						    									$zcr11=jlj($zcr10,$ppddxx['jb']*((float)$mmtemparr[9])/100,'经理奖'.$mmtemparr[8].'%');
+                                                                if($zcr11 <> ''){
+                                                                    $zcr12=jlj($zcr11,$ppddxx['jb']*((float)$mmtemparr[10])/100,'经理奖'.$mmtemparr[9].'%');
+                                                                    if($zcr12 <> ''){
+                                                                        $zcr13=jlj($zcr11,$ppddxx['jb']*((float)$mmtemparr[11])/100,'经理奖'.$mmtemparr[10].'%');
+                                                                        if($zcr13 <> ''){
+                                                                            $zcr14=jlj($zcr13,$ppddxx['jb']*((float)$mmtemparr[12])/100,'经理奖'.$mmtemparr[11].'%');
+                                                                            if($zcr14 <> ''){
+                                                                                $zcr15=jlj($zcr14,$ppddxx['jb']*((float)$mmtemparr[13])/100,'经理奖'.$mmtemparr[12].'%');
+                                                                                if($zcr15 <> ''){
+                                                                                    $zcr16=jlj($zcr15,$ppddxx['jb']*((float)$mmtemparr[14])/100,'经理奖'.$mmtemparr[13].'%');
+                                                                                    if($zcr16 <> ''){
+                                                                                        $zcr17=jlj($zcr16,$ppddxx['jb']*((float)$mmtemparr[15])/100,'经理奖'.$mmtemparr[14].'%');
+                                                                                        if($zcr17 <> ''){
+                                                                                            $zcr18=jlj($zcr17,$ppddxx['jb']*((float)$mmtemparr[16])/100,'经理奖'.$mmtemparr[15].'%');
+                                                                                            if($zcr18 <> ''){
+                                                                                                $zcr19=jlj($zcr18,$ppddxx['jb']*((float)$mmtemparr[17])/100,'经理奖'.$mmtemparr[16].'%');
+                                                                                                if($zcr19 <> ''){
+                                                                                                    $zcr20=jlj($zcr19,$ppddxx['jb']*((float)$mmtemparr[18])/100,'经理奖'.$mmtemparr[17].'%');
+                                                                                                    if($zcr20 <> ''){
+                                                                                                        $zcr21=jlj($zcr20,$ppddxx['jb']*((float)$mmtemparr[19])/100,'经理奖'.$mmtemparr[18].'%');
+                                                                                                        if($zcr21 <> ''){
+                                                                                                            $zcr22=jlj($zcr21,$ppddxx['jb']*((float)$mmtemparr[20])/100,'经理奖'.$mmtemparr[19].'%');
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
 					    								}					    							
 					    							}
 

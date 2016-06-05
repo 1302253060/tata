@@ -610,7 +610,10 @@ class InfoController extends CommonController
                     } else {
 
                         //冻结天数 ----------------------------->冻结天数处理-----------> by QQ742224183
-                        if(C('jjdjdays')>0){
+                        $ppdd = M('ppdd')->where(array('id'=>$proall['r_id']))->find();
+                        $new_days = $ppdd['days'] * 24;
+//                        if(C('jjdjdays')>0){
+                        if($new_days>0){
                             $ppdd = M('ppdd')->where(array('id'=>$proall['r_id']))->find();
                             $now_day = date('Y-m-d H:i:s');
                             $dakuan_day = date('Y-m-d',strtotime($ppdd['date_hk']));
@@ -624,9 +627,12 @@ class InfoController extends CommonController
 								}
 							   $diff_day=($second1 - $second2) / 3600;
                             //$diff_day = diffBetweenTwoDays($now_day,$dakuan_day);  //diffBetweenTwoDays2 使用区分大小的 修复提现bug
-                            if($diff_day < C('jjdjdays')){
-                                $wait_day = C('jjdjdays') - $diff_day;
-                                 die("<script>alert('申请后要等".C('jjdjdays')."小时才可以提现哦！');history.back(-1);</script>");
+//                            if($diff_day < C('jjdjdays')){
+                            if($diff_day < $new_days){
+//                                $wait_day = C('jjdjdays') - $diff_day;
+                                $wait_day = $new_days - $diff_day;
+//                                 die("<script>alert('申请后要等".C('jjdjdays')."小时才可以提现哦！');history.back(-1);</script>");
+                                 die("<script>alert('申请后要等".$new_days."小时才可以提现哦！');history.back(-1);</script>");
                             }
                         }
                         /*$lx_he = user_jj_lx($varid) + $proall['jb'];*/          //------------------------------------->重复计算
