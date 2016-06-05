@@ -1014,6 +1014,7 @@ class IndexController extends CommonController
         //$map ['UG_dataType'] = array('IN',array('mrfh','tjj','kdj','mrldj','glj'));
 
         $map['zt'] = 0;
+        $map['qiangdan'] = 0;
 
         if (I('get.cz') == 1) {
             $map['zt'] = 1;
@@ -1329,7 +1330,9 @@ class IndexController extends CommonController
              $tgbzuser = M('jsbz')->where(array('id' => $danzi_id, 'zt'=>0, 'qiangdan'=>0))->find();//查询是否可以放出去
              if($tgbzuser) {
                 if(M('jsbz')->where(array('id' => $danzi_id, 'zt'=>0, 'qiangdan'=>0))->save(array('qiangdan'=>1))) {
-                    echo '设置抢单成功';
+                    $this->success('设置抢单成功!');
+                }else{
+                    $this->success('设置抢单失败!');
                 }
              }
          }

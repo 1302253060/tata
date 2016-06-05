@@ -1004,7 +1004,7 @@ class InfoController extends CommonController
     public function qiangdan() {
         $id = I('get.id');
         $JsbzObj = M('jsbz');
-        $jsbz_data = $JsbzObj->where(array('zt'=>0, 'qiangdan'=>0, 'id'=>$id))->find();
+        $jsbz_data = $JsbzObj->where(array('zt'=>0, 'qiangdan'=>1, 'id'=>$id))->find();
         $user_data = M('user')->where(array('UE_ID'=>$_SESSION['uid']))->find();
 
         $data2['zffs1'] = $jsbz_data['zffs1'];
@@ -1017,13 +1017,16 @@ class InfoController extends CommonController
         $data2['date'] = $jsbz_data['date'];
         $data2['zt'] = $jsbz_data['zt'];
         $data2['qr_zt'] = $jsbz_data['qr_zt'];
+
         //添加数据了
         $varid = M('tgbz')->add($data2);
+
         //$p_id2充值ID ,$val提现ID
         //与买入V币者为参照物
         if (ppdd_add($varid, $jsbz_data['id'])) {
-            M('tgbz')->where(array('id' => $data['pid']))->setInc('cf_ds', 1);   //------------------------》这个是什么意思还没搞明白 并且最好他们还删除了该条记录
+            M('tgbz')->where(array('id' => $varid))->setInc('cf_ds', 1);   //------------------------》这个是什么意思还没搞明白 并且最好他们还删除了该条记录
         }
-
+        $JsbzObj->where(array('id'=>$id))->save(array('qiangdan'=>2));
+        die("<script>alert('抢单成功');history.back(-1);</script>");
     }
 }
