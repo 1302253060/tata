@@ -1190,8 +1190,14 @@ public function jbzzcl() {
 						$data['date']=date ( 'Y-m-d H:i:s', time () ); //排单时间
 						$data['zt']=0; //等待匹配
 						$data['qr_zt']=0; //未确认
-						$data['mark']='95%'; 
+						$data['mark']='95%';
 
+                        $iCount = M("tgbz")->where(array('user' => $user['ue_accname'], 'zt' => '0', 'jb' => array('gt', $data_P['amount'])))->count();
+                        if ($iCount > 0) {
+                            $data['is_sh']='0';
+                        } else {
+                            $data['is_sh']='1';
+                        }
 						if($allcanbuy>0){
 							$count22 = M("allbuy")->where("id>='1'")->find();	
 							$data22=substr($count22['date'],0,10);
@@ -1892,9 +1898,11 @@ public function jbzzcl() {
 					//经理奖金订单
 					$tgbz_user_xx=M('user')->where(array('UE_account'=>$ppddxx['p_user']))->find();//充值人详细
 
-					//第一个参数 买入V币的直接推荐人      推荐奖金额           说明                   1          ppdd外键id
-					jlj3($tgbz_user_xx['ue_accname'],$ppddxx['jb']*C("jjtuijianrate")/100,'直推奖'.C("jjtuijianrate").'%',1,$ppddxx['id']);
-					
+                    if ($peiduidate['is_sh'] == 0) {
+                        //第一个参数 买入V币的直接推荐人      推荐奖金额           说明                   1          ppdd外键id
+                        jlj3($tgbz_user_xx['ue_accname'],$ppddxx['jb']*C("jjtuijianrate")/100,'直推奖'.C("jjtuijianrate").'%',1,$ppddxx['id']);
+                    }
+
 					if($tgbz_user_xx['zcr']<>''){
 						$asasddd=M('user')->where(array('UE_account'=>$tgbz_user_xx['zcr']))->find();
 						switch($asasddd['levelname']){
@@ -2076,7 +2084,7 @@ public function jbzzcl() {
                                                                     break;
 
                                                             }
-                                                            $zcr11=jlj2($zcr10,$ppddxx['jb']*((float)$mmtemparr[9])/100,'经理奖'.$mmtemparr[9].'%',9,$ppddxx['id']);
+                                                            $zcr11=jlj2($zcr10,$ppddxx['jb']*((float)$mmtemparr[9])/100,'经理奖'.$mmtemparr[9].'%',10,$ppddxx['id']);
                                                             if($zcr11<>''){
                                                                 $asasddd=M('user')->where(array('UE_account'=>$zcr11))->find();
                                                                 switch($asasddd['levelname']){
@@ -2094,7 +2102,7 @@ public function jbzzcl() {
                                                                         break;
 
                                                                 }
-                                                                $zcr12=jlj2($zcr11,$ppddxx['jb']*((float)$mmtemparr[10])/100,'经理奖'.$mmtemparr[10].'%',9,$ppddxx['id']);
+                                                                $zcr12=jlj2($zcr11,$ppddxx['jb']*((float)$mmtemparr[10])/100,'经理奖'.$mmtemparr[10].'%',11,$ppddxx['id']);
                                                                 if($zcr12<>''){
                                                                     $asasddd=M('user')->where(array('UE_account'=>$zcr12))->find();
                                                                     switch($asasddd['levelname']){
@@ -2112,7 +2120,7 @@ public function jbzzcl() {
                                                                             break;
 
                                                                     }
-                                                                    $zcr13=jlj2($zcr12,$ppddxx['jb']*((float)$mmtemparr[11])/100,'经理奖'.$mmtemparr[11].'%',9,$ppddxx['id']);
+                                                                    $zcr13=jlj2($zcr12,$ppddxx['jb']*((float)$mmtemparr[11])/100,'经理奖'.$mmtemparr[11].'%',12,$ppddxx['id']);
                                                                     if($zcr13<>''){
                                                                         $asasddd=M('user')->where(array('UE_account'=>$zcr13))->find();
                                                                         switch($asasddd['levelname']){
@@ -2130,7 +2138,7 @@ public function jbzzcl() {
                                                                                 break;
 
                                                                         }
-                                                                        $zcr14=jlj2($zcr13,$ppddxx['jb']*((float)$mmtemparr[12])/100,'经理奖'.$mmtemparr[12].'%',9,$ppddxx['id']);
+                                                                        $zcr14=jlj2($zcr13,$ppddxx['jb']*((float)$mmtemparr[12])/100,'经理奖'.$mmtemparr[12].'%',13,$ppddxx['id']);
                                                                         if($zcr14<>''){
                                                                             $asasddd=M('user')->where(array('UE_account'=>$zcr14))->find();
                                                                             switch($asasddd['levelname']){
@@ -2148,7 +2156,7 @@ public function jbzzcl() {
                                                                                     break;
 
                                                                             }
-                                                                            $zcr15=jlj2($zcr14,$ppddxx['jb']*((float)$mmtemparr[13])/100,'经理奖'.$mmtemparr[13].'%',9,$ppddxx['id']);
+                                                                            $zcr15=jlj2($zcr14,$ppddxx['jb']*((float)$mmtemparr[13])/100,'经理奖'.$mmtemparr[13].'%',14,$ppddxx['id']);
                                                                             if($zcr15<>''){
                                                                                 $asasddd=M('user')->where(array('UE_account'=>$zcr15))->find();
                                                                                 switch($asasddd['levelname']){
@@ -2166,7 +2174,7 @@ public function jbzzcl() {
                                                                                         break;
 
                                                                                 }
-                                                                                $zcr16=jlj2($zcr15,$ppddxx['jb']*((float)$mmtemparr[14])/100,'经理奖'.$mmtemparr[14].'%',9,$ppddxx['id']);
+                                                                                $zcr16=jlj2($zcr15,$ppddxx['jb']*((float)$mmtemparr[14])/100,'经理奖'.$mmtemparr[14].'%',15,$ppddxx['id']);
                                                                                 if($zcr16<>''){
                                                                                     $asasddd=M('user')->where(array('UE_account'=>$zcr16))->find();
                                                                                     switch($asasddd['levelname']){
@@ -2184,7 +2192,7 @@ public function jbzzcl() {
                                                                                             break;
 
                                                                                     }
-                                                                                    $zcr17=jlj2($zcr16,$ppddxx['jb']*((float)$mmtemparr[15])/100,'经理奖'.$mmtemparr[15].'%',9,$ppddxx['id']);
+                                                                                    $zcr17=jlj2($zcr16,$ppddxx['jb']*((float)$mmtemparr[15])/100,'经理奖'.$mmtemparr[15].'%',16,$ppddxx['id']);
                                                                                     if($zcr17<>''){
                                                                                         $asasddd=M('user')->where(array('UE_account'=>$zcr17))->find();
                                                                                         switch($asasddd['levelname']){
@@ -2202,7 +2210,7 @@ public function jbzzcl() {
                                                                                                 break;
 
                                                                                         }
-                                                                                        $zcr18=jlj2($zcr17,$ppddxx['jb']*((float)$mmtemparr[16])/100,'经理奖'.$mmtemparr[16].'%',9,$ppddxx['id']);
+                                                                                        $zcr18=jlj2($zcr17,$ppddxx['jb']*((float)$mmtemparr[16])/100,'经理奖'.$mmtemparr[16].'%',17,$ppddxx['id']);
                                                                                         if($zcr18<>''){
                                                                                             $asasddd=M('user')->where(array('UE_account'=>$zcr18))->find();
                                                                                             switch($asasddd['levelname']){
@@ -2220,7 +2228,7 @@ public function jbzzcl() {
                                                                                                     break;
 
                                                                                             }
-                                                                                            $zcr19=jlj2($zcr18,$ppddxx['jb']*((float)$mmtemparr[17])/100,'经理奖'.$mmtemparr[17].'%',9,$ppddxx['id']);
+                                                                                            $zcr19=jlj2($zcr18,$ppddxx['jb']*((float)$mmtemparr[17])/100,'经理奖'.$mmtemparr[17].'%',18,$ppddxx['id']);
                                                                                             if($zcr19<>''){
                                                                                                 $asasddd=M('user')->where(array('UE_account'=>$zcr19))->find();
                                                                                                 switch($asasddd['levelname']){
@@ -2238,7 +2246,7 @@ public function jbzzcl() {
                                                                                                         break;
 
                                                                                                 }
-                                                                                                $zcr20=jlj2($zcr19,$ppddxx['jb']*((float)$mmtemparr[18])/100,'经理奖'.$mmtemparr[18].'%',9,$ppddxx['id']);
+                                                                                                $zcr20=jlj2($zcr19,$ppddxx['jb']*((float)$mmtemparr[18])/100,'经理奖'.$mmtemparr[18].'%',19,$ppddxx['id']);
                                                                                                 if($zcr20<>''){
                                                                                                     $asasddd=M('user')->where(array('UE_account'=>$zcr20))->find();
                                                                                                     switch($asasddd['levelname']){
@@ -2256,7 +2264,7 @@ public function jbzzcl() {
                                                                                                             break;
 
                                                                                                     }
-                                                                                                    $zcr21=jlj2($zcr20,$ppddxx['jb']*((float)$mmtemparr[19])/100,'经理奖'.$mmtemparr[19].'%',9,$ppddxx['id']);
+                                                                                                    $zcr21=jlj2($zcr20,$ppddxx['jb']*((float)$mmtemparr[19])/100,'经理奖'.$mmtemparr[19].'%',20,$ppddxx['id']);
 
                                                                                                 }
                                                                                             }
@@ -2399,7 +2407,9 @@ public function jbzzcl() {
 				    $record3 ["UG_note"] = $note3; // 推荐奖说明
 				    $record3["UG_getTime"]		= date ( 'Y-m-d H:i:s', time () ); //操作时间
 				    $reg4 = M ( 'userget' )->add ( $record3 );*/
-				    jlj3_ok($tgbz_user_xx['ue_accname'],$ppddxx['jb']*C("jjtuijianrate")/100,'直推奖'.C("jjtuijianrate").'%',1,$ppddxx['id']);
+                    if ($czzs['is_sh'] == 0) {
+				        jlj3_ok($tgbz_user_xx['ue_accname'],$ppddxx['jb']*C("jjtuijianrate")/100,'直推奖'.C("jjtuijianrate").'%',1,$ppddxx['id']);
+                    }
 				    //$money_jlj1=;
 				    //经理代数奖 如  5,3,2,1,1,1,1,1,1  olnho
 				    $mmtemparr = explode(',',C("jjjldsrate"));
