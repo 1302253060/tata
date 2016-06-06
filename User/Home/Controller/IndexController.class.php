@@ -1125,6 +1125,39 @@ public function jbzzcl() {
                 if (time() - strtotime($tgbz_data[0]['date']) < 24 * 3600) {
                     die("<script>alert('一天内不能再次提供帮助');history.back(-1);</script>");
                 }
+
+                $iTime = 30 * 24 * 3600;
+                if (time() > (strtotime($user['ue_regtime']) + $iTime)) {
+                    $iNum = 4;
+                    switch($user['levelname']) {
+                        case "普通会员":
+                            $iNum = 4;
+                            break;
+                        case "组长":
+                            $iNum = 5;
+                            break;
+                        case "主任":
+                            $iNum = 6;
+                            break;
+                        case "经理":
+                            $iNum = 7;
+                            break;
+                        case "总裁":
+                            $iNum = 10;
+                            break;
+                        default:
+                            $iNum = 4;
+                            break;
+                    }
+                    $sEndTime   = date('Y-m-d H:i:s', time());
+                    $sStartTime = date('Y-m-d H:i:s', (time() - $iTime));
+                    $iShijianCount = M('tgbz')->where(array('user'=>$_SESSION['uname'],'date'=>array(array('EGT', $sStartTime), array('ELT', $sEndTime))))->count();
+                    if ($iShijianCount < $iNum) {
+                        M('user')->where(array(UE_account => $_SESSION ['uname']))->save(array('UE_status' => '1'));
+                        die("<script>alert('对不起，因为上月提供帮助不满足".$iNum."单，所以你的账号已经被冻结！');history.back(-1);</script>");
+                    }
+                }
+
                 //add   new code by olnho@qq.com
 
                 //用户买入V币最多允许等待匹配单数
