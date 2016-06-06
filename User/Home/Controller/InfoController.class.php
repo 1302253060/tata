@@ -1006,7 +1006,7 @@ class InfoController extends CommonController
 
     private function qiangdan($id) {
         $JsbzObj = M('jsbz');
-        $yz_data = M('tjbz')->where(array('zt'=>0, 'user'=>$_SESSION['uname']))->select();
+        $yz_data = M('tgbz')->where(array('zt'=>0, 'user'=>$_SESSION['uname']))->select();
         if(empty($yz_data)) {
             die("<script>alert('抢单失败,请先提供帮助');history.back(-1);</script>");
         }
