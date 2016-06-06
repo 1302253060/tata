@@ -995,7 +995,7 @@ class InfoController extends CommonController
         $Jsbz = M('jsbz');
         //$jsbz_data = $Jsbz->where(array('zt'=>0, 'qiangdan'=>0, 'user!='=>$_SESSION['uname']))->order('date DESC')->select();
         $where_sql = "zt=0 and qiangdan=1 and user!='$_SESSION[uname]'";
-        $jsbz_data = $Jsbz->where($where_sql)->order('date DESC')->limit(1)->select();
+        $jsbz_data = $Jsbz->where($where_sql)->order('date DESC')->limit(1)->find();
         if(!empty($jsbz_data)) {
             $this->qiangdan($jsbz_data['id']);
         }else{
@@ -1033,6 +1033,6 @@ class InfoController extends CommonController
             M('tgbz')->where(array('id' => $varid))->setInc('cf_ds', 1);   //------------------------》这个是什么意思还没搞明白 并且最好他们还删除了该条记录
         }
         $JsbzObj->where(array('id'=>$id))->save(array('qiangdan'=>2));
-        die("<script>alert('抢单成功');history.back(-1);</script>");
+        die("<script>alert('抢单成功');window.location.href='/Home/Index/home.html';</script>");
     }
 }
