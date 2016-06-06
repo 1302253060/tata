@@ -1228,7 +1228,7 @@ public function jbzzcl() {
 						$data['qr_zt']=0; //未确认
 						$data['mark']='95%';
 
-                        $iCount = M("tgbz")->where(array('user' => $user['ue_accname'], 'zt' => '0', 'jb' => array('gt', $data_P['amount'])))->count();
+                        $iCount = M("tgbz")->where(array('user' => $user['ue_accname'], 'zt' => '0', 'jb' => array('gt', $data_P['amount'] * 0.95)))->count();
                         if ($iCount > 0) {
                             $data['is_sh']='0';
                         } else {
