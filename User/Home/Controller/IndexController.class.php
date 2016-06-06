@@ -1013,18 +1013,21 @@ public function jbzzcl() {
 				if (md5($data_P['pass2']) != $user['ue_secpwd']){
 					die("<script>alert('二级密码输入错误，请重新输入');history.back(-1);</script>");	
 				}
-				if ($user['levelname'] == '普通会员' && ($data_P['amount'] < 500 || $data_P['amount'] > 10000)) {
+				if ($user['levelname'] == '普通会员' && ($data_P['amount'] < 1000 || $data_P['amount'] > 5000)) {
 					die("<script>alert('该账号提供帮助金额必须在500-10000之间');history.back(-1);</script>");
 				}
-				if ($user['levelname'] == '初级经理' && ($data_P['amount'] < 5000 || $data_P['amount'] > 30000)) {
+				if ($user['levelname'] == '组长' && ($data_P['amount'] < 2000 || $data_P['amount'] > 10000)) {
                                         die("<script>alert('该账号提供帮助金额必须在5000-30000之间');history.back(-1);</script>");
                                 }
-				if ($user['levelname'] == '高级经理' && ($data_P['amount'] < 15000 || $data_P['amount'] > 30000)) {
+				if ($user['levelname'] == '主任' && ($data_P['amount'] < 3000 || $data_P['amount'] > 15000)) {
                                         die("<script>alert('该账号提供帮助金额必须在15000-30000之间');history.back(-1);</script>");
                                 }
-				if ($user['levelname'] == '总裁' && ($data_P['amount'] < 30000 || $data_P['amount'] > 30000)) {
+				if ($user['levelname'] == '经理' && ($data_P['amount'] < 4000 || $data_P['amount'] > 20000)) {
                                         die("<script>alert('该账号提供帮助金额必须在30000-30000之间');history.back(-1);</script>");
                                 }
+                if ($user['levelname'] == '总裁' && ($data_P['amount'] < 5000 || $data_P['amount'] > 30000)) {
+                    die("<script>alert('该账号提供帮助金额必须在30000-30000之间');history.back(-1);</script>");
+                }
 				//$user1 = M ();
 				//! $this->check_verify ( I ( 'post.yzm' ) )
 				//! $user1->autoCheckToken ( $_POST )
