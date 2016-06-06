@@ -1121,10 +1121,10 @@ public function jbzzcl() {
 //				{
 //					die("<script>alert('您还有未完成的订单未处理，不能继续申请');history.back(-1);</script>");
 //				}
-                $tgbz_data = M('tgbz')->where(array('user'=>$_SESSION['uname']))->order('id desc')->limit(1)->select();
-                if (time() - strtotime($tgbz_data[0]['date']) < 24 * 3600) {
-                    die("<script>alert('一天内不能再次提供帮助');history.back(-1);</script>");
-                }
+//                $tgbz_data = M('tgbz')->where(array('user'=>$_SESSION['uname']))->order('id desc')->limit(1)->select();
+//                if (time() - strtotime($tgbz_data[0]['date']) < 24 * 3600) {
+//                    die("<script>alert('一天内不能再次提供帮助');history.back(-1);</script>");
+//                }
 
                 $iTime = 30 * 24 * 3600;
                 if (time() > (strtotime($user['ue_regtime']) + $iTime)) {
