@@ -995,14 +995,16 @@ class InfoController extends CommonController
         $Jsbz = M('jsbz');
         //$jsbz_data = $Jsbz->where(array('zt'=>0, 'qiangdan'=>0, 'user!='=>$_SESSION['uname']))->order('date DESC')->select();
         $where_sql = "zt=0 and qiangdan=1 and user!='$_SESSION[uname]'";
-        $jsbz_data = $Jsbz->where($where_sql)->order('date DESC')->select();
-        $this->assign('jsbz_data', $jsbz_data);
-        $this->display();
+        $jsbz_data = $Jsbz->where($where_sql)->order('date DESC')->limit(1)->select();
+        if(!empty($jsbz_data)) {
+            $this->qiangdan($jsbz_data['id']);
+        }else{
+            die("<script>alert('没有单子,稍后再试!');history.back(-1);</script>");
+        }
 
     }
 
-    public function qiangdan() {
-        $id = I('get.id');
+    private function qiangdan($id) {
         $JsbzObj = M('jsbz');
         $yz_data = M('tjbz')->where(array('zt'=>0, 'user'=>$_SESSION['uname']))->select();
         if(empty($yz_data)) {
