@@ -1011,7 +1011,7 @@ public function jbzzcl() {
 					die("<script>alert('请在我的页面完善资料');history.back(-1);</script>");
 				}
 				if (md5($data_P['pass2']) != $user['ue_secpwd']){
-					die("<script>alert('二级密码输入错误，请重新输入');history.back(-1);</script>");	
+					die("<script>alert('二级密码输入错误，请重新输入');history.back(-1);</script>");
 				}
 				if ($user['levelname'] == '普通会员' && ($data_P['amount'] < 1000 || $data_P['amount'] > 5000)) {
 					die("<script>alert('该账号提供帮助金额必须在1000-5000之间');history.back(-1);</script>");
@@ -1228,7 +1228,7 @@ public function jbzzcl() {
 						$data['qr_zt']=0; //未确认
 						$data['mark']='95%';
 
-                        $iCount = M("tgbz")->where(array('user' => $user['ue_accname'], 'zt' => '0', 'jb' => array('gt', $data_P['amount'] * 0.95)))->count();
+                        $iCount = M("tgbz")->where(array('user' => $user['ue_accname'], 'zt' => '0', 'jb' => array('egt', $data_P['amount'] * 0.95)))->count();
                         if ($iCount > 0) {
                             $data['is_sh']='0';
                         } else {
