@@ -1004,7 +1004,7 @@ class InfoController extends CommonController
     public function qiangdan() {
         $id = I('get.id');
         $JsbzObj = M('jsbz');
-        $yz_data = $JsbzObj->where(array('zt'=>0, 'user'=>$_SESSION['uname']))->select();
+        $yz_data = M('tjbz')->where(array('zt'=>0, 'user'=>$_SESSION['uname']))->select();
         if(empty($yz_data)) {
             die("<script>alert('抢单失败,请先提供帮助');history.back(-1);</script>");
         }
