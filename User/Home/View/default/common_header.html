@@ -1,4 +1,12 @@
-  <header class="navbar navbar-static-top" id="top" role="header" style=" position:fixed; top:0px; width:100%; background:#555; color:#fff;border:0px;">
+<script language="javascript">
+    function delcfm() {
+        if (!confirm("确认要设置抢单？")) {
+            window.event.returnValue = false;
+        }
+    }
+</script>
+
+<header class="navbar navbar-static-top" id="top" role="header" style=" position:fixed; top:0px; width:100%; background:#555; color:#fff;border:0px;">
     <div>
       <div class="navbar-header" >
         <button class="navbar-toggle collapsed" type="button" data-toggle="collapse"
@@ -38,7 +46,7 @@
         </li>
 
           <li >
-              <a href="/Home/info/qiangdan_list.html" class="glyphicons home" ><i></i>抢单</a>
+              <a href="/Home/info/qiangdan_list.html" class="glyphicons home" onclick="delcfm()" ><i></i>抢单</a>
           </li>
 
 

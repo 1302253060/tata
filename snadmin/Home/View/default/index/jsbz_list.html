@@ -6,6 +6,13 @@
 <link href="/sncss/css/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="/sncss/js/jquery.js"></script>
 <script type="text/javascript" src="/sncss/date/laydate.js"></script>
+    <script language="javascript">
+        function delcfm() {
+            if (!confirm("确认要设置抢单？")) {
+                window.event.returnValue = false;
+            }
+        }
+    </script>
 
 <script type="text/javascript">
 $(document).ready(function(){
@@ -111,7 +118,7 @@ $(document).ready(function(){
 
             <td>
                 <if condition="$v.qiangdan eq 0" >
-                    <a href="/admin.php/Home/Index/jsbz_list_qiangdan/id/{$v.id}/">设置抢单</a>
+                    <a href="/admin.php/Home/Index/jsbz_list_qiangdan/id/{$v.id}/" onclick="delcfm()">设置抢单</a>
                 </if>
                 <if condition="$v.qiangdan eq 1" >
                     已经设置
