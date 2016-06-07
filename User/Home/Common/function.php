@@ -942,28 +942,35 @@ function accountaddlevel($var){
     $sLevelName = "普通会员";
     $user = M("user")->where(array(array('UE_account'=>$var)))->find();
     if ($user['levelname'] == "普通会员") {
+        $sLevelName = "普通会员";
         $iCount = M("user")->where(array('UE_accName' => $var, 'levelname' => '普通会员'))->count();
         if ($iCount >= 5) {
             $sLevelName = "组长";
         }
     }
     if ($user['levelname'] == "组长") {
+        $sLevelName = "组长";
         $iCount = M("user")->where(array('UE_accName' => $var, 'levelname' => '组长'))->count();
         if ($iCount >= 3) {
             $sLevelName = "主任";
         }
     }
     if ($user['levelname'] == "主任") {
+        $sLevelName = "主任";
         $iCount = M("user")->where(array('UE_accName' => $var, 'levelname' => '主任'))->count();
         if ($iCount >= 3) {
             $sLevelName = "经理";
         }
     }
     if ($user['levelname'] == "经理") {
+        $sLevelName = "经理";
         $iCount = M("user")->where(array('UE_accName' => $var, 'levelname' => '经理'))->count();
         if ($iCount >= 3) {
             $sLevelName = "总裁";
         }
+    }
+    if ($user['levelname'] == "总裁") {
+        $sLevelName = "总裁";
     }
     M('user')->where(array('UE_account' => $var))->save(array('levelname' => $sLevelName));
     if ($sLevelName != "普通会员") {
