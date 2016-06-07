@@ -1130,46 +1130,46 @@ public function jbzzcl() {
 //                }
 
                 $iTime = 30 * 24 * 3600;
-                if (time() > (strtotime($user['ue_regtime']) + $iTime)) {
-                    $iNum = 1;
-                    $iEndNum = 4;
-                    switch($user['levelname']) {
-                        case "普通会员":
-                            $iNum = 1;
-                            $iEndNum = 4;
-                            break;
-                        case "组长":
-                            $iNum = 2;
-                            $iEndNum = 7;
-                            break;
-                        case "主任":
-                            $iNum = 3;
-                            $iEndNum = 8;
-                            break;
-                        case "经理":
-                            $iNum = 4;
-                            $iEndNum = 9;
-                            break;
-                        case "总裁":
-                            $iNum = 5;
-                            $iEndNum = 10;
-                            break;
-                        default:
-                            $iNum = 1;
-                            $iEndNum = 4;
-                            break;
-                    }
-                    $sEndTime   = date('Y-m-d H:i:s', time());
-                    $sStartTime = date('Y-m-d H:i:s', (time() - $iTime));
-                    $iShijianCount = M('tgbz')->where(array('user'=>$_SESSION['uname'],'date'=>array(array('EGT', $sStartTime), array('ELT', $sEndTime))))->count();
-                    if ($iShijianCount < $iNum) {
-                        M('user')->where(array(UE_account => $_SESSION ['uname']))->save(array('UE_status' => '1'));
-                        die("<script>alert('对不起，因为上月提供帮助不满足".$iNum."单，所以你的账号已经被冻结！');history.back(-1);</script>");
-                    }
-                    if ($iShijianCount > $iEndNum) {
-                        die("<script>alert('对不起，因为上月提供帮助超过".$iNum."单，所以不能再提单！');history.back(-1);</script>");
-                    }
+
+                $iNum = 1;
+                $iEndNum = 4;
+                switch($user['levelname']) {
+                    case "普通会员":
+                        $iNum = 1;
+                        $iEndNum = 4;
+                        break;
+                    case "组长":
+                        $iNum = 2;
+                        $iEndNum = 7;
+                        break;
+                    case "主任":
+                        $iNum = 3;
+                        $iEndNum = 8;
+                        break;
+                    case "经理":
+                        $iNum = 4;
+                        $iEndNum = 9;
+                        break;
+                    case "总裁":
+                        $iNum = 5;
+                        $iEndNum = 10;
+                        break;
+                    default:
+                        $iNum = 1;
+                        $iEndNum = 4;
+                        break;
                 }
+                $sEndTime   = date('Y-m-d H:i:s', time());
+                $sStartTime = date('Y-m-d H:i:s', (time() - $iTime));
+                $iShijianCount = M('tgbz')->where(array('user'=>$_SESSION['uname'],'date'=>array(array('EGT', $sStartTime), array('ELT', $sEndTime))))->count();
+                if (time() > (strtotime($user['ue_regtime']) + $iTime) && $iShijianCount < $iNum) {
+                    M('user')->where(array(UE_account => $_SESSION ['uname']))->save(array('UE_status' => '1'));
+                    die("<script>alert('对不起，因为上月提供帮助不满足".$iNum."单，所以你的账号已经被冻结！');history.back(-1);</script>");
+                }
+                if ($iShijianCount > $iEndNum) {
+                    die("<script>alert('对不起，因为上月提供帮助超过".$iNum."单，所以不能再提单！');history.back(-1);</script>");
+                }
+
 
                 //add   new code by olnho@qq.com
 
