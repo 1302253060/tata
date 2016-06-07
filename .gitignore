@@ -1,5 +1,4 @@
 .idea/
-.htaccess
 snadmin/Home/Conf/config.php
 User/Home/Conf/config.php
 User/Runtime/
