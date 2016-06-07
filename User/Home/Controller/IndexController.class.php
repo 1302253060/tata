@@ -1167,7 +1167,7 @@ public function jbzzcl() {
                     die("<script>alert('对不起，因为上月提供帮助不满足".$iNum."单，所以你的账号已经被冻结！');history.back(-1);</script>");
                 }
                 if ($iShijianCount > $iEndNum) {
-                    die("<script>alert('对不起，因为上月提供帮助超过".$iNum."单，所以不能再提单！');history.back(-1);</script>");
+                    die("<script>alert('对不起，因为上月提供帮助超过".$iEndNum."单，所以不能再提单！');history.back(-1);</script>");
                 }
 
 
