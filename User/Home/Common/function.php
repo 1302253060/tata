@@ -939,37 +939,35 @@ function accountaddlevel($var){
 		    M('user')->where(array('UE_account' => $var, 'sfjl' => 0))->save(array('sfjl' => 1));
 	}
     */
+//    $user = M("user")->where(array('UE_account'=>$var))->find();
+
+    $aCount = M("user")->where(array('UE_accName' => $var))->field('levelname, count(1) as c')->group('levelname')->select();
+    $aTmpCount = array();
+    if (!empty($aCount)) foreach ($aCount as $aVal) {
+        $aTmpCount[$aVal['levelname']] = $aVal['c'];
+    }
+    $aTmpCount['普通会员'] = isset($aTmpCount['普通会员']) ? $aTmpCount['普通会员'] : 0;
+    $aTmpCount['组长'] = isset($aTmpCount['组长']) ? $aTmpCount['组长'] : 0;
+    $aTmpCount['主任'] = isset($aTmpCount['主任']) ? $aTmpCount['主任'] : 0;
+    $aTmpCount['经理'] = isset($aTmpCount['经理']) ? $aTmpCount['经理'] : 0;
+    $aTmpCount['总裁'] = isset($aTmpCount['总裁']) ? $aTmpCount['总裁'] : 0;
+
+    $aTmpCount['普通会员'] = $aTmpCount['普通会员'] + $aTmpCount['组长'] + $aTmpCount['主任'] + $aTmpCount['经理'] + $aTmpCount['总裁'];
+    $aTmpCount['组长'] = $aTmpCount['组长'] + $aTmpCount['主任'] + $aTmpCount['经理'] + $aTmpCount['总裁'];
+    $aTmpCount['主任'] = $aTmpCount['主任'] + $aTmpCount['经理'] + $aTmpCount['总裁'];
+    $aTmpCount['经理'] = $aTmpCount['经理'] + $aTmpCount['总裁'];
+
     $sLevelName = "普通会员";
-    $user = M("user")->where(array(array('UE_account'=>$var)))->find();
-    if ($user['levelname'] == "普通会员") {
-        $sLevelName = "普通会员";
-        $iCount = M("user")->where(array('UE_accName' => $var, 'levelname' => '普通会员'))->count();
-        if ($iCount >= 5) {
-            $sLevelName = "组长";
-        }
-    }
-    if ($user['levelname'] == "组长") {
+    if ($aTmpCount['普通会员'] >= 5) {
         $sLevelName = "组长";
-        $iCount = M("user")->where(array('UE_accName' => $var, 'levelname' => '组长'))->count();
-        if ($iCount >= 3) {
-            $sLevelName = "主任";
-        }
     }
-    if ($user['levelname'] == "主任") {
+    if ($aTmpCount['组长'] >= 3) {
         $sLevelName = "主任";
-        $iCount = M("user")->where(array('UE_accName' => $var, 'levelname' => '主任'))->count();
-        if ($iCount >= 3) {
-            $sLevelName = "经理";
-        }
     }
-    if ($user['levelname'] == "经理") {
+    if ($aTmpCount['主任'] >= 3) {
         $sLevelName = "经理";
-        $iCount = M("user")->where(array('UE_accName' => $var, 'levelname' => '经理'))->count();
-        if ($iCount >= 3) {
-            $sLevelName = "总裁";
-        }
     }
-    if ($user['levelname'] == "总裁") {
+    if ($aTmpCount['经理'] >= 3) {
         $sLevelName = "总裁";
     }
     M('user')->where(array('UE_account' => $var))->save(array('levelname' => $sLevelName));
