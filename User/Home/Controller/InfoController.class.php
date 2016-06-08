@@ -920,7 +920,7 @@ class InfoController extends CommonController
    public function rwhistory(){
     $tgbz = M("tgbz");
     $result = $tgbz->where(array("user" => $_SESSION['uname'], "zt" => 0))->order('id DESC')->select();
-    $this->v_list = $result1;
+    $this->v_list = $result;
     //////////////////----------
     $User = M('user_jj'); // 實例化User對象
 
