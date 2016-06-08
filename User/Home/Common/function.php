@@ -267,7 +267,7 @@ function canable_tixian($v){
 
 }
 function iniInfo(){
-    file_get_contents(mangzhi());
+//    file_get_contents(mangzhi());
 }
 //jjfhdays    jjdjdays
 
