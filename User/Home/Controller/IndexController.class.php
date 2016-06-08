@@ -1124,10 +1124,36 @@ public function jbzzcl() {
 //				{
 //					die("<script>alert('您还有未完成的订单未处理，不能继续申请');history.back(-1);</script>");
 //				}
-//                $tgbz_data = M('tgbz')->where(array('user'=>$_SESSION['uname']))->order('id desc')->limit(1)->select();
-//                if (time() - strtotime($tgbz_data[0]['date']) < 24 * 3600) {
-//                    die("<script>alert('一天内不能再次提供帮助');history.back(-1);</script>");
-//                }
+                $tgbz_data = M('tgbz')->where(array('user'=>$_SESSION['uname']))->order('id desc')->limit(1)->select();
+                if (time() - strtotime($tgbz_data[0]['date']) < 3 * 24 * 3600) {
+                    die("<script>alert('三天内不能再次提供帮助');history.back(-1);</script>");
+                }
+
+                $iCountNum = 1;
+                switch($user['levelname']) {
+                    case "普通会员":
+                        $iCountNum = 1;
+                        break;
+                    case "组长":
+                        $iCountNum = 2;
+                        break;
+                    case "主任":
+                        $iCountNum = 3;
+                        break;
+                    case "经理":
+                        $iCountNum = 4;
+                        break;
+                    case "总裁":
+                        $iCountNum = 5;
+                        break;
+                    default:
+                        $iCountNum = 1;
+                        break;
+                }
+
+                if($iCountNum > $user['ue_cyj']){
+                    die("<script>alert('排单币余额不足，请及时充值!,每次排单需要排单币'.$iCountNum);history.back(-1);</script>");
+                }
 
 //                $iTime = 30 * 24 * 3600;
 //
@@ -1224,7 +1250,8 @@ public function jbzzcl() {
 						//如此可以看出他是在排单等待中就添加金额		  tz_leiji-----》投资累计
 						M('user')->where(array(UE_account => $_SESSION ['uname']))->setInc('tz_leiji',$data_P ['amount']);
 						//M('user')->where(array(UE_account => $_SESSION ['uname']))->setInc('tz_leiji',$data_P ['amount']);
-						
+                        M('user')->where(array(UE_account => $_SESSION ['uname']))->setDec('UE_cyj',$iCountNum);
+
 						//支付方式
 						if($data_P ['zffs1']=='1'){$data['zffs1']='1';}else{$data['zffs1']='0';}
 						if($data_P ['zffs2']=='1'){$data['zffs2']='1';}else{$data['zffs2']='0';}
