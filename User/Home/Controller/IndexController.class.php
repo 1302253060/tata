@@ -1152,7 +1152,7 @@ public function jbzzcl() {
                 }
 
                 if($iCountNum > $user['ue_cyj']){
-                    die("<script>alert('排单币余额不足，请及时充值!,每次排单需要排单币'.$iCountNum);history.back(-1);</script>");
+                    die("<script>alert('排单币余额不足，请及时充值!,每次排单需要排单币".$iCountNum."');history.back(-1);</script>");
                 }
 
 //                $iTime = 30 * 24 * 3600;
