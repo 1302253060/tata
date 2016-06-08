@@ -329,7 +329,7 @@ $(document).ready(function() {
                                         <foreach name='v_list' item='v'>
 
                                             <tr role="row" class="odd">
-                                                <td class="sorting_1">{$aab=$v.id}</td>
+                                                <td class="sorting_1">{$aab=$v.id|md5}</td>
                                                 <td>{$v.date}</td>
                                                 <td>提供帮助</td>
                                                 <td>{$v.jb}</td>
