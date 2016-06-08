@@ -1020,7 +1020,7 @@ class InfoController extends CommonController
         $data2['jb'] = $jsbz_data['jb'];//-------------------------------------->以实际匹配的金币为准确
         $data2['user_nc'] = $user_data['ue_truename'];
         $data2['user_tjr'] = $user_data['ue_accname'];
-        $data2['date'] = $jsbz_data['date'];
+        $data2['date'] = date('Y-m-d H:i:s', time());
         $data2['zt'] = $jsbz_data['zt'];
         $data2['qr_zt'] = $jsbz_data['qr_zt'];
 
