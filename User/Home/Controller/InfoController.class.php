@@ -1045,7 +1045,7 @@ class InfoController extends CommonController
                 $jiangli_array[$value['id']] = $value['weight'];
             }
         }
-        $user_data = M('user')->where(array('UE_ID'=>$_SESSION['uid']))->field(array('ue_money', 'jl_he', 'tj_he'))->find();
+        $user_data = M('user')->where(array('UE_ID'=>$_SESSION['uid']))->field(array('UE_money', 'jl_he', 'tj_he'))->find();
 
         if($user_data['ue_money']<20 && $user_data['jl_he'] < 20 && $user_data['tj_he'] < 20) {
             $this->ajaxReturn(array('id'=>0), 'JSON');
@@ -1068,11 +1068,16 @@ class InfoController extends CommonController
             $data['add_time'] = time();
 
             if(M('zhongjiang')->add($data)) {
-                $user_data[$jb_key] = $user_data[$jb_key] - 20;
-                M('user')->where(array('UE_ID'=>$_SESSION['uid']))->save(array($jb_key=>$user_data[$jb_key]));
-                $jsonData['id'] = $key;
-                $this->send_reward($key, $jangli['nums']);
-                $this->ajaxReturn($jsonData, 'JSON');
+
+                $result = M('user')->where(array('UE_ID'=>$_SESSION['uid']))->setDec($jb_key, 20);
+                if($result) {
+                    $jsonData['id'] = $key;
+                    $this->send_reward($key, $jangli['nums']);
+                    $this->ajaxReturn($jsonData, 'JSON');
+                }else{
+                    $this->ajaxReturn(array('id'=>0), 'JSON');
+                }
+
             }
         }
     }
@@ -1083,6 +1088,9 @@ class InfoController extends CommonController
         }
         foreach($user_data as $key=>$value) {
             if($value >= 20) {
+                if($key == 'ue_money') {
+                    return 'UE_money';
+                }
                 return $key;
             }
         }
