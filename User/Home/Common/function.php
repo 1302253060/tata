@@ -1249,4 +1249,50 @@ function ppdd_add($p_id,$g_id)
 
 }
 
+/**
+ * 根据数组值作为概率进行随机选择
+ * $array : 概率数组，格式为：
+ *	array (
+ *		键名1 => 概率值1,
+ *		键名2 => 概率值2,
+ *		......
+ *		)
+ *   $except : 忽略的键名
+ *   $degree : 精度倍数
+ */
+function get_probability_key ( $array, $degree = 100, $except = null ,$type = 0)
+{
+    if ( !is_null ( $except ) )
+    {
+        unset ( $array[$except] );
+    }
+    $total = @array_sum ( $array ) * $degree;
+    if ( !$total )
+    {
+        return false;
+    }
+
+    if($type == 1){
+        $intRand = rand ( 0, $total );
+    }
+    else{
+        $intRand = mt_rand( 0, $total );
+    }
+
+    $offset = 0;
+
+    foreach ( $array as $key => $item )
+    {
+        $value = $item * $degree;
+        if ( $intRand <= $value + $offset )
+        {
+            $result = $key;
+            break;
+        }
+        $offset += $value;
+    }
+
+    return $result;
+}
+
 ?>
