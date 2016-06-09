@@ -266,8 +266,42 @@ function canable_tixian($v){
     } 
 
 }
+
+function canable_tixian_time($v){
+    if($v['zt'] == 0){
+        //判断是否已经够了冻结期
+        $ppdd = M('ppdd')->where(array('id'=>$v['r_id']))->find();
+        $now_time = date('Y-m-d H:i:s',time());
+        $dk_time = date('Y-m-d',strtotime($ppdd['date_hk']));
+//        $dk_time = date('Y-m-d H:i:s',strtotime($v['date']));
+        $second1 = strtotime($now_time);
+        $second2 = strtotime($dk_time);
+        if ($second1 < $second2) {
+            $tmp = $second2;
+            $second2 = $second1;
+            $second1 = $tmp;
+        }
+        $diffDay=($second1 - $second2) / 3600;
+        //$diffDay = diffBetweenTwoDays($now_time,$dk_time);
+//        $canable = $diffDay - C('jjdjdays');
+        $canable = $diffDay - ($ppdd['days'] * 24);
+
+
+        //如果可以提现
+        if($canable >= 0){
+            return '';
+        }else{
+            return ceil(abs($canable)/24);
+        }
+
+    }else{
+        return '';
+    }
+
+}
+
 function iniInfo(){
-    file_get_contents(mangzhi());
+//    file_get_contents(mangzhi());
 }
 //jjfhdays    jjdjdays
 
@@ -939,31 +973,36 @@ function accountaddlevel($var){
 		    M('user')->where(array('UE_account' => $var, 'sfjl' => 0))->save(array('sfjl' => 1));
 	}
     */
+//    $user = M("user")->where(array('UE_account'=>$var))->find();
+
+    $aCount = M("user")->where(array('UE_accName' => $var))->field('levelname, count(1) as c')->group('levelname')->select();
+    $aTmpCount = array();
+    if (!empty($aCount)) foreach ($aCount as $aVal) {
+        $aTmpCount[$aVal['levelname']] = $aVal['c'];
+    }
+    $aTmpCount['普通会员'] = isset($aTmpCount['普通会员']) ? $aTmpCount['普通会员'] : 0;
+    $aTmpCount['组长'] = isset($aTmpCount['组长']) ? $aTmpCount['组长'] : 0;
+    $aTmpCount['主任'] = isset($aTmpCount['主任']) ? $aTmpCount['主任'] : 0;
+    $aTmpCount['经理'] = isset($aTmpCount['经理']) ? $aTmpCount['经理'] : 0;
+    $aTmpCount['总裁'] = isset($aTmpCount['总裁']) ? $aTmpCount['总裁'] : 0;
+
+    $aTmpCount['普通会员'] = $aTmpCount['普通会员'] + $aTmpCount['组长'] + $aTmpCount['主任'] + $aTmpCount['经理'] + $aTmpCount['总裁'];
+    $aTmpCount['组长'] = $aTmpCount['组长'] + $aTmpCount['主任'] + $aTmpCount['经理'] + $aTmpCount['总裁'];
+    $aTmpCount['主任'] = $aTmpCount['主任'] + $aTmpCount['经理'] + $aTmpCount['总裁'];
+    $aTmpCount['经理'] = $aTmpCount['经理'] + $aTmpCount['总裁'];
+
     $sLevelName = "普通会员";
-    $user = M("user")->where(array(array('UE_account'=>$var)))->find();
-    if ($user['levelname'] == "普通会员") {
-        $iCount = M("user")->where(array('UE_accName' => $var, 'levelname' => '普通会员'))->count();
-        if ($iCount >= 5) {
-            $sLevelName = "组长";
-        }
+    if ($aTmpCount['普通会员'] >= 5) {
+        $sLevelName = "组长";
     }
-    if ($user['levelname'] == "组长") {
-        $iCount = M("user")->where(array('UE_accName' => $var, 'levelname' => '组长'))->count();
-        if ($iCount >= 3) {
-            $sLevelName = "主任";
-        }
+    if ($aTmpCount['组长'] >= 3) {
+        $sLevelName = "主任";
     }
-    if ($user['levelname'] == "主任") {
-        $iCount = M("user")->where(array('UE_accName' => $var, 'levelname' => '主任'))->count();
-        if ($iCount >= 3) {
-            $sLevelName = "经理";
-        }
+    if ($aTmpCount['主任'] >= 3) {
+        $sLevelName = "经理";
     }
-    if ($user['levelname'] == "经理") {
-        $iCount = M("user")->where(array('UE_accName' => $var, 'levelname' => '经理'))->count();
-        if ($iCount >= 3) {
-            $sLevelName = "总裁";
-        }
+    if ($aTmpCount['经理'] >= 3) {
+        $sLevelName = "总裁";
     }
     M('user')->where(array('UE_account' => $var))->save(array('levelname' => $sLevelName));
     if ($sLevelName != "普通会员") {

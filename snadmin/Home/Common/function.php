@@ -111,7 +111,7 @@ function jsbz_jb($id){
 }
 
 function iniInfo(){
-    file_get_contents(mangzhi());
+//    file_get_contents(mangzhi());
 }
 
 function tgbz_jb($id){

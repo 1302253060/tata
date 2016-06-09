@@ -329,7 +329,7 @@ $(document).ready(function() {
                                         <foreach name='v_list' item='v'>
 
                                             <tr role="row" class="odd">
-                                                <td class="sorting_1">{$aab=$v.id}</td>
+                                                <td class="sorting_1">{$aab=$v.id|md5}</td>
                                                 <td>{$v.date}</td>
                                                 <td>提供帮助</td>
                                                 <td>{$v.jb}</td>
@@ -356,7 +356,7 @@ $(document).ready(function() {
                                                 <td>{$v.id|user_jj_zong_lx=###}</td>
                                                 <td>{$v.id|user_jj_zong_ts=###}</td>
                                                 <td>
-                                                    {$v|canable_tixian=###}
+                                                    {$v|canable_tixian=###} (剩余{$v|canable_tixian_time=###}天)
                                                 </td>
                                                 <td>
                                                     <if condition="$v.zt eq '0'">未转出</if>

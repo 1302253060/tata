@@ -920,7 +920,7 @@ class InfoController extends CommonController
    public function rwhistory(){
     $tgbz = M("tgbz");
     $result = $tgbz->where(array("user" => $_SESSION['uname'], "zt" => 0))->order('id DESC')->select();
-    $this->v_list = $result1;
+    $this->v_list = $result;
     //////////////////----------
     $User = M('user_jj'); // 實例化User對象
 
@@ -1020,7 +1020,7 @@ class InfoController extends CommonController
         $data2['jb'] = $jsbz_data['jb'];//-------------------------------------->以实际匹配的金币为准确
         $data2['user_nc'] = $user_data['ue_truename'];
         $data2['user_tjr'] = $user_data['ue_accname'];
-        $data2['date'] = $jsbz_data['date'];
+        $data2['date'] = date('Y-m-d H:i:s', time());
         $data2['zt'] = $jsbz_data['zt'];
         $data2['qr_zt'] = $jsbz_data['qr_zt'];
 
