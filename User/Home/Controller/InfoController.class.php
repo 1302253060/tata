@@ -1045,9 +1045,19 @@ class InfoController extends CommonController
                 $jiangli_array[$value['id']] = $value['weight'];
             }
         }
+        $user_data = M('user')->where(array('UE_ID'=>$_SESSION['uid']))->field(array('ue_money', 'jl_he', 'tj_he'))->find();
+
+        if($user_data['ue_money']<20 && $user_data['jl_he'] < 20 && $user_data['tj_he'] < 20) {
+            $this->ajaxReturn(array('id'=>0), 'JSON');
+
+        }
+
+        $jb_key = $this->get_key($user_data);
+        if(!$jb_key) {
+            $this->ajaxReturn(array('id'=>0), 'JSON');
+        }
         $key = get_probability_key($jiangli_array, 10000);
         $jangli = $jiangliObj->where(array('id'=>$key))->find();
-
         if(!empty($jangli)) {
             $data = array();
             $data['uid'] = $_SESSION['uid'];
@@ -1058,9 +1068,80 @@ class InfoController extends CommonController
             $data['add_time'] = time();
 
             if(M('zhongjiang')->add($data)) {
+                $user_data[$jb_key] = $user_data[$jb_key] - 20;
+                M('user')->where(array('UE_ID'=>$_SESSION['uid']))->save(array($jb_key=>$user_data[$jb_key]));
                 $jsonData['id'] = $key;
+                $this->send_reward($key, $jangli['nums']);
                 $this->ajaxReturn($jsonData, 'JSON');
             }
         }
     }
+
+    private function get_key ($user_data) {
+        if(empty($user_data)) {
+            return false;
+        }
+        foreach($user_data as $key=>$value) {
+            if($value >= 20) {
+                return $key;
+            }
+        }
+        return false;
+    }
+
+    private function send_reward($reward_id, $nums) {
+
+        switch($reward_id) {
+            case 1 :
+            case 2 :
+                $this->pin_add_cl($nums);
+                break;
+            case 3:
+                $this->add_ue_cyj($nums);
+                break;
+            default:
+        }
+    }
+
+    private function pin_add_cl($nums)
+    {
+        //dump($data_P);die;
+        $user = M('user')->where(array(
+            'UE_account' => $_SESSION['uname']
+        ))->find();
+
+        if (!$user) {
+            return false;
+        } else {
+            $cgsl = 0;
+            for ($i = 0; $i < $nums; $i++) {
+                $pin = md5(sprintf("%0" . strlen(9) . "d", mt_rand(0, 99999999999)));
+                //$pin=0;
+
+                if (!M('pin')->where(array('pin' => $pin))->find()) {
+                    $data['user'] = $_SESSION['uname'];
+                    $data['pin'] = $pin;
+                    $data['zt'] = 0;
+                    $data['sc_date'] = date('Y-m-d H:i:s', time());
+                    if (M('pin')->add($data)) {
+                        $cgsl++;
+                    }
+                }
+            }
+            return true;
+        }
+    }
+
+    private function add_ue_cyj($nums = 1) {
+        $user = M('user')->where(array(
+            'UE_ID' => $_SESSION['uid']
+        ))->find();
+
+        if (!$user) {
+            return false;
+        }
+        M('user')->where(array('UE_ID'=>$_SESSION['uid']))->setInc('UE_cyj', $nums);
+    }
+
+
 }
