@@ -1035,4 +1035,32 @@ class InfoController extends CommonController
         $JsbzObj->where(array('id'=>$id))->save(array('qiangdan'=>2));
         die("<script>alert('抢单成功');window.location.href='/Home/Index/home.html';</script>");
     }
+
+    public function choujiang () {
+        $jiangliObj = M('jiangli_peizhi');
+        $jiangli_data = $jiangliObj->select();
+        $jiangli_array = array();
+        if(!empty($jiangli_data)) {
+            foreach($jiangli_data as $key=>$value) {
+                $jiangli_array[$value['id']] = $value['weight'];
+            }
+        }
+        $key = get_probability_key($jiangli_array, 10000);
+        $jangli = $jiangliObj->where(array('id'=>$key))->find();
+
+        if(!empty($jangli)) {
+            $data = array();
+            $data['uid'] = $_SESSION['uid'];
+            $data['uname'] = $_SESSION['uname'];
+            $data['jiangli_id'] = $jangli['id'];
+            $data['jiang_name'] = $jangli['name'];
+            $data['jiang_num'] = $jangli['nums'];
+            $data['add_time'] = time();
+
+            if(M('zhongjiang')->add($data)) {
+                $jsonData['id'] = $key;
+                $this->ajaxReturn($jsonData, 'JSON');
+            }
+        }
+    }
 }
