@@ -2109,6 +2109,18 @@ class IndexController extends CommonController
         $this->assign('jiangli', $edit_data);
         $this->display();
 
+    }
 
+    public function zjlist() {
+
+        $zhongjiangModel = M('zhongjiang');
+        $count = $zhongjiangModel->count ();
+        $p = getpage($count,20);
+        $list = $zhongjiangModel->order ( 'add_time DESC' )->limit ( $p->firstRow, $p->listRows )->select ();
+
+        $this->assign ( 'list', $list ); // 賦值數據集
+
+        $this->assign ( 'page', $p->show() ); // 賦值分頁輸出
+        $this->display();
     }
 }
