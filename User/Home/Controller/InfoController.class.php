@@ -1151,5 +1151,7 @@ class InfoController extends CommonController
         M('user')->where(array('UE_ID'=>$_SESSION['uid']))->setInc('UE_cyj', $nums);
     }
 
-
+    public function cj () {
+        $this->display('choujiang');
+    }
 }
