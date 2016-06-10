@@ -75,44 +75,55 @@
         $('.pointer').click(function (){
 
             if(bRotate)return;
-            var item = rnd(0,7);
+            $.ajax({
+                url: '/Home/Info/choujiang',
+                dataType: 'json',
+                error: function(){},
+                success: function(data){
+                    switch (data.id) {
+                        case 6:
+                            //var angle = [26, 88, 137, 185, 235, 287, 337];
+//                            rotateFn(0, 337, '未中奖');
+                            rotateFn(0, 337, '未中奖');
+                            break;
+                        case 1:
+                            //var angle = [88, 137, 185, 235, 287];
+//                            rotateFn(1, 26, '免单4999元');
+                            rotateFn(1, 26, '您抽中了激活码，请到激活码管理里面查看。');
+                            break;
+                        case 2:
+                            //var angle = [137, 185, 235, 287];
+                            rotateFn(2, 88, '您抽中了激活码，请到激活码管理里面查看。');
+                            break;
+                        case 3:
+                            //var angle = [137, 185, 235, 287];
+//                            rotateFn(3, 137, '免单10元');
+                            rotateFn(3, 137, '您抽中了排单币，请到排单币管理里面查看。');
+                            break;
+                        case 4:
+                            //var angle = [185, 235, 287];
+//                            rotateFn(4, 185, '免单5元');
+                            rotateFn(4, 185, '您抽中了苹果6s/plus，随后有工作人员联系您发货。');
+                            break;
+                        case 5:
+                            //var angle = [185, 235, 287];
+//                            rotateFn(5, 185, '免单5元');
+                            rotateFn(5, 185, '您抽中了苹果ipad，随后有工作人员联系您发货。');
+                            break;
+                        case 7:
+                            //var angle = [235, 287];
+//                            rotateFn(6, 235, '免分期服务费');
+                            rotateFn(6, 235, '您抽中了衣服，随后有工作人员联系您发货。');
+                            break;
+                        case 8:
+                            //var angle = [287];
+//                            rotateFn(7, 287, '提高白条额度');
+                            rotateFn(7, 287, '您抽中了衣服，随后有工作人员联系您发货。');
+                            break;
+                    }
+                }
+            });
 
-            switch (item) {
-                case 0:
-                    //var angle = [26, 88, 137, 185, 235, 287, 337];
-                    rotateFn(0, 337, '未中奖');
-                    break;
-                case 1:
-                    //var angle = [88, 137, 185, 235, 287];
-                    rotateFn(1, 26, '免单4999元');
-                    break;
-                case 2:
-                    //var angle = [137, 185, 235, 287];
-                    rotateFn(2, 88, '免单50元');
-                    break;
-                case 3:
-                    //var angle = [137, 185, 235, 287];
-                    rotateFn(3, 137, '免单10元');
-                    break;
-                case 4:
-                    //var angle = [185, 235, 287];
-                    rotateFn(4, 185, '免单5元');
-                    break;
-                case 5:
-                    //var angle = [185, 235, 287];
-                    rotateFn(5, 185, '免单5元');
-                    break;
-                case 6:
-                    //var angle = [235, 287];
-                    rotateFn(6, 235, '免分期服务费');
-                    break;
-                case 7:
-                    //var angle = [287];
-                    rotateFn(7, 287, '提高白条额度');
-                    break;
-            }
-
-            console.log(item);
         });
     });
     function rnd(n, m){
