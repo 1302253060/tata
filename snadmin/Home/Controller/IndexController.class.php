@@ -2081,4 +2081,34 @@ class IndexController extends CommonController
         }
 
     }
+
+    public function rewardlist() {
+        $jiangli_data = M('jiangli_peizhi')->select();
+        $this->assign('list', $jiangli_data);
+        $this->display('index/jiangli_peizhi');
+
+    }
+
+    public function rewardset() {
+        $id = I('get.id');
+        $post_data = I('post.');
+        if(!empty($post_data)) {
+            $eid = $post_data['id'];
+            $data['name'] = $post_data['name'];
+            $data['nums'] = $post_data['nums'];
+            $data['weight'] = $post_data['weight'];
+            if(M(jiangli_peizhi)->where(array('id'=>$eid))->save($data)) {
+                $this->success('修改成功');
+                exit;
+            }else{
+                $this->success('修改失败');
+                exit;
+            }
+        }
+        $edit_data = M('jiangli_peizhi')->where(array('id'=>$id))->find();
+        $this->assign('jiangli', $edit_data);
+        $this->display();
+
+
+    }
 }

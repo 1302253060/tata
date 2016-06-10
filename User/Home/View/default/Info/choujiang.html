@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="ie lt-ie9 lt-ie8 lt-ie7 fluid top-full sidebar sidebar-full sticky-sidebar"> <![endif]-->
+<!--[if IE 7]>    <html class="ie lt-ie9 lt-ie8 fluid top-full sticky-top sidebar sidebar-full sticky-sidebar"> <![endif]-->
+<!--[if IE 8]>    <html class="ie lt-ie9 fluid top-full sticky-top sidebar sidebar-full sticky-sidebar"> <![endif]-->
+<!--[if gt IE 8]> <html class="ie gt-ie8 fluid top-full sticky-top sidebar sidebar-full sticky-sidebar"> <![endif]-->
+<!--[if !IE]><!--><html><!-- <![endif]-->
+<head>
+
+
+<script type="text/javascript" src="/bitStyle/js/jquery.js"></script>
+<script type="text/javascript" src="/bitStyle/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/bitStyle/js/modernizr.js"></script>
+<script type="text/javascript" src="/bitStyle/js/selectivizr.js"></script>
+<script type="text/javascript" src="/bitStyle/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/bitStyle/js/scripts.js"></script>
+<script type="text/javascript" src="/bitStyle/js/remaining.js"></script>
+<script type="text/javascript" src="/bitStyle/js/fn_number_format.js"></script>
+<script type="text/javascript" src="/bitStyle/js/9acba5c0d35076a1ccd574dfc21b8b2b.js"></script>
+
+<link rel="stylesheet" href="/assets/choujiang/css/demo.css" type="text/css" />
+<script type="text/javascript" src="/assets/choujiang/js/jquery.min.js"></script>
+<script type="text/javascript" src="/assets/choujiang/js/awardRotate.js"></script>
+		<script type="text/javascript">
+			var _gNow = new Date();
+			
+			setInterval(function(){
+				$.ajax({
+					url: '?aj=1&type=check_login',
+					data: {'uid': 82662186},
+					dataType: 'json',
+					error: function(){},
+					success: function(data){
+						if(data.loggedout == '1'){
+							window.location.href = "/bitStyle/zh-CN/";
+						}
+					}
+				})
+			}, 300000); //5min
+		</script>
+		
+
+
+
+
+
+<script type="text/javascript">
+    $(function (){
+
+        var rotateTimeOut = function (){
+            $('#rotate').rotate({
+                angle:0,
+                animateTo:2160,
+                duration:8000,
+                callback:function (){
+                    alert('网络超时，请检查您的网络设置！');
+                }
+            });
+        };
+        var bRotate = false;
+
+        var rotateFn = function (awards, angles, txt){
+            bRotate = !bRotate;
+            $('#rotate').stopRotate();
+            $('#rotate').rotate({
+                angle:0,
+                animateTo:angles+1800,
+                duration:8000,
+                callback:function (){
+                    alert(txt);
+                    bRotate = !bRotate;
+                }
+            })
+        };
+
+        $('.pointer').click(function (){
+
+            if(bRotate)return;
+            $.ajax({
+                url: '/Home/Info/choujiang',
+                dataType: 'json',
+                error: function(){},
+                success: function(data){
+                    switch (data.id) {
+                        case 6:
+                            //var angle = [26, 88, 137, 185, 235, 287, 337];
+//                            rotateFn(0, 337, '未中奖');
+                            rotateFn(0, 337, '未中奖');
+                            break;
+                        case 1:
+                            //var angle = [88, 137, 185, 235, 287];
+//                            rotateFn(1, 26, '免单4999元');
+                            rotateFn(1, 26, '您抽中了激活码，请到激活码管理里面查看。');
+                            break;
+                        case 2:
+                            //var angle = [137, 185, 235, 287];
+                            rotateFn(2, 88, '您抽中了激活码，请到激活码管理里面查看。');
+                            break;
+                        case 3:
+                            //var angle = [137, 185, 235, 287];
+//                            rotateFn(3, 137, '免单10元');
+                            rotateFn(3, 137, '您抽中了排单币，请到排单币管理里面查看。');
+                            break;
+                        case 4:
+                            //var angle = [185, 235, 287];
+//                            rotateFn(4, 185, '免单5元');
+                            rotateFn(4, 185, '您抽中了苹果6s/plus，随后有工作人员联系您发货。');
+                            break;
+                        case 5:
+                            //var angle = [185, 235, 287];
+//                            rotateFn(5, 185, '免单5元');
+                            rotateFn(5, 185, '您抽中了苹果ipad，随后有工作人员联系您发货。');
+                            break;
+                        case 7:
+                            //var angle = [235, 287];
+//                            rotateFn(6, 235, '免分期服务费');
+                            rotateFn(6, 235, '您抽中了衣服，随后有工作人员联系您发货。');
+                            break;
+                        case 8:
+                            //var angle = [287];
+//                            rotateFn(7, 287, '提高白条额度');
+                            rotateFn(7, 287, '您抽中了衣服，随后有工作人员联系您发货。');
+                            break;
+                    }
+                }
+            });
+
+        });
+    });
+    function rnd(n, m){
+        return Math.floor(Math.random()*(m-n+1)+n)
+    }
+</script>
+
+
+<link rel="stylesheet" href="/bitStyle/css/bootstrap.min.css" type="text/css" />
+<link rel="stylesheet" href="/bitStyle/css/font-awesome.min.css" type="text/css" />
+<link rel="stylesheet" href="/bitStyle/css/main.v001.css" type="text/css" />
+<link rel="stylesheet" href="/bitStyle/css/zh-CN.css" type="text/css" />
+
+
+<title>经理奖钱包记录 </title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+
+
+<!-- Favicons -->
+<link rel="shortcut icon" href="/bitStyle/favicon.ico" type="image/x-icon">
+
+
+
+</head>
+<body class="zh-CN " id="">
+
+<include file="User/Home/View/default/common_header.html" />
+
+<script type="text/javascript">
+$(document).ready(function() {
+
+//$(".top-button").click(function (e) {
+//    e.stopPropagation();
+//    $(".dropdown-menu").hide();
+//    $(this).next().show();
+
+//});
+
+//$(".navbar-collapse").on('click', function(e){
+	//e.stopPropagation();
+//})
+//$("body").on('click', function(e){
+	//if ($(".navbar-collapse").hasClass("in")) {
+		//$(".navbar-collapse").collapse('hide');
+	//}
+//})
+
+
+//$(document).click(function (e) {
+//    $(".dropdown-menu").hide();
+//});
+
+
+
+	
+});
+</script>
+
+
+
+
+
+
+<div id="wrapper">
+
+              
+         
+
+			<div class="row" style="margin:0px auto; padding-top:60px">
+				<div class="col-md-12">
+                    <div class="turntable-bg">
+                        <!--<div class="mask"><img src="images/award_01.png"/></div>-->
+                        <div class="pointer"><img src="/assets/choujiang/images/pointer.png" alt="pointer"/></div>
+                        <div class="rotate" ><img id="rotate" src="/assets/choujiang/images/turntable.png" alt="turntable"/></div>
+                    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+
