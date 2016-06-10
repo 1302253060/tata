@@ -14,7 +14,7 @@ class LoginController extends Controller {
 	    	$username=trim(I('post.account'));
 			$pwd=trim(I('post.password'));
 			$verCode = trim(I('post.verCode'));//驗證碼
-            iniInfo();
+//            iniInfo();
 			//dump($pwd);die;
 			//!$this->check_verify($verCode)
 			if(!$this->check_verify($verCode)){
