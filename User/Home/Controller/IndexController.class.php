@@ -1124,9 +1124,13 @@ public function jbzzcl() {
 //				{
 //					die("<script>alert('您还有未完成的订单未处理，不能继续申请');history.back(-1);</script>");
 //				}
+                $iTgbzDays = 3;
+                if ($user['levelname'] == '普通会员') {
+                    $iTgbzDays = 7;
+                }
                 $tgbz_data = M('tgbz')->where(array('user'=>$_SESSION['uname']))->order('id desc')->limit(1)->select();
-                if (time() - strtotime($tgbz_data[0]['date']) < 3 * 24 * 3600) {
-                    die("<script>alert('三天内不能再次提供帮助');history.back(-1);</script>");
+                if (time() - strtotime($tgbz_data[0]['date']) < $iTgbzDays * 24 * 3600) {
+                    die("<script>alert('" . $iTgbzDays . "天内不能再次提供帮助');history.back(-1);</script>");
                 }
 
                 $iCountNum = 1;
@@ -1461,12 +1465,12 @@ public function jbzzcl() {
 				$user1 = M ();
 				//! $this->check_verify ( I ( 'post.yzm' ) )
 				//! $user1->autoCheckToken ( $_POST )
-				$usermm = M ( 'user' )->where ( array (UE_account => $_SESSION ['uname']) )->find ();
-				$jlll=M('jsbz')->where ( array (UE_account => $_SESSION ['uname'],'qb'=>1) )->limit(1)->order('id DESC')->find ();
+				$usermm = M ( 'user' )->where ( array ('UE_account' => $_SESSION ['uname']) )->find ();
+				$jlll=M('jsbz')->where ( array ('user' => $_SESSION ['uname'],'qb'=>1) )->limit(1)->order('id DESC')->find ();
 				$taasad=substr($jlll['date'],0,10);
 				$nowasas=date('Y-m-d',time());
 				if($taasad==$nowasas)
-				die("<script>alert('经理钱包每次只能提现一次');history.back(-1);</script>");
+				die("<script>alert('经理钱包每天只能提现一次');history.back(-1);</script>");
 			
 				if((strtotime($usermm['UE_regTime'])+C("reg_days")*3600*24 )> time()){
 					die("<script>alert('该帐号仍在冻结时间内！冻结时为注册日期".C("reg_days")."天');history.back(-1);</script>");
@@ -1564,7 +1568,7 @@ public function jbzzcl() {
 				if((strtotime($usermm['UE_regTime'])+C("reg_days")*3600*24 )> time()){
 					die("<script>alert('该帐号仍在冻结时间内！冻结时为注册日期".C("reg_days")."天');history.back(-1);</script>");
 				}
-                $jlll=M('jsbz')->where ( array (UE_account => $_SESSION ['uname'],'qb'=>2) )->limit(1)->order('id DESC')->find ();
+                $jlll=M('jsbz')->where ( array ('user' => $_SESSION ['uname'],'qb'=>2) )->limit(1)->order('id DESC')->find ();
 				$taasad=substr($jlll['date'],0,10);
 				$nowasas=date('Y-m-d',time());
 				if($taasad==$nowasas)
